@@ -23,12 +23,9 @@ independent fail-closed attestation layer.
 | Immutable itinerary and temporal graph domain models | Implemented |
 | Deterministic dependency DAG compilation and canonical SHA-256 | Implemented |
 | Duplicate, reference, cycle, deadline, and resource-bound validation | Implemented |
+| Source-derived DAG and executed contract-boundary visuals | Implemented |
 | Reliability model, routing, simulation, CLI, or API | Planned |
-| Product screenshots, diagrams, charts, or demos | Not yet available |
-
-No visual is included merely to make the repository look complete. Real,
-reproducible architecture diagrams, CLI captures, failure traces, and result
-plots will arrive with the executable core that generates them.
+| CLI captures, scenario plots, or product demos | Not yet available |
 
 ## Reproduce the attestation
 
@@ -90,6 +87,34 @@ canonical bytes and digests. Public errors contain stable codes rather than
 submitted values or local paths. See
 [the version-1 contract](docs/input-contract-v1.md) for the exact schema,
 resource limits, constraint edges, and claim boundaries.
+
+## Reproduce the visual evidence
+
+Both SVGs below are generated from reviewed source inputs with the Python
+standard library. The generator reads the committed synthetic fixture, invokes
+the public `tctravel` decoder and compiler, and binds exact source/output hashes
+in [`docs/visuals/manifest.json`](docs/visuals/manifest.json).
+
+```bash
+python3 tools/generate_visuals.py --check
+```
+
+![Exact compiled temporal DAG with release, duration, deadline, and transfer constraints](docs/visuals/generated/temporal-dag.svg)
+
+*Exact compiled DAG.* All seven nodes and eleven `TemporalEdge` records come
+from `examples/synthetic_connection.v1.json`; the full itinerary and graph
+SHA-256 digests are printed in the visual.
+
+![Executed fail-closed contract-boundary matrix](docs/visuals/generated/contract-boundary-matrix.svg)
+
+*Executed contract-boundary matrix.* Every row is an observed public-API
+result from a synthetic accepted or rejected payload. Rejections display only
+the stable redacted `ContractError.code`; accepted rows bind canonical digests.
+
+These are evidence diagrams, not UI screenshots. They make no routing,
+live-data, reliability, booking, or predictive-quality claim. See
+[the visual evidence note](docs/visual-evidence.md) for provenance, exact
+generation behavior, and review boundaries.
 
 ## Engineering direction
 

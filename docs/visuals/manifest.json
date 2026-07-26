@@ -1,0 +1,276 @@
+{
+  "check_command": "python3 tools/generate_visuals.py --check",
+  "evidence": {
+    "boundary_matrix": [
+      {
+        "case_id": "accepted_baseline",
+        "code": null,
+        "detail": "3 activities; 2 transfers",
+        "graph_sha256": "9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d",
+        "itinerary_sha256": "61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6",
+        "label": "Committed synthetic fixture",
+        "probe": "Exact version-1 object",
+        "status": "accepted"
+      },
+      {
+        "case_id": "accepted_reordered",
+        "code": null,
+        "detail": "Canonical itinerary + graph digests match baseline",
+        "graph_sha256": "9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d",
+        "itinerary_sha256": "61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6",
+        "label": "Equivalent reordered input",
+        "probe": "Objects, activities, transfers reordered",
+        "status": "accepted"
+      },
+      {
+        "case_id": "unknown_field",
+        "code": "unknown_field",
+        "detail": "ContractError.code = unknown_field",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Unknown root field",
+        "probe": "One undeclared key",
+        "status": "rejected"
+      },
+      {
+        "case_id": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "detail": "ContractError.code = duplicate_json_key",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Duplicate JSON key",
+        "probe": "schema_version appears twice",
+        "status": "rejected"
+      },
+      {
+        "case_id": "boolean_integer",
+        "code": "invalid_type",
+        "detail": "ContractError.code = invalid_type",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Boolean in integer field",
+        "probe": "horizon_seconds = true",
+        "status": "rejected"
+      },
+      {
+        "case_id": "dependency_cycle",
+        "code": "dependency_cycle",
+        "detail": "ContractError.code = dependency_cycle",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Cyclic transfers",
+        "probe": "gate_walk loops to local_shuttle",
+        "status": "rejected"
+      },
+      {
+        "case_id": "infeasible_deadline",
+        "code": "infeasible_deadline",
+        "detail": "ContractError.code = infeasible_deadline",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Impossible minimum finish",
+        "probe": "600 s minimum; 599 s deadline",
+        "status": "rejected"
+      },
+      {
+        "case_id": "input_too_deep",
+        "code": "input_too_deep",
+        "detail": "ContractError.code = input_too_deep",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Nesting beyond public limit",
+        "probe": "25 nested containers",
+        "status": "rejected"
+      },
+      {
+        "case_id": "input_too_large",
+        "code": "input_too_large",
+        "detail": "ContractError.code = input_too_large",
+        "graph_sha256": null,
+        "itinerary_sha256": null,
+        "label": "Payload beyond public limit",
+        "probe": "65,537 bytes",
+        "status": "rejected"
+      }
+    ],
+    "compiled_graph": {
+      "activity_order": [
+        "local_shuttle",
+        "security_check",
+        "gate_walk"
+      ],
+      "contract_schema_version": 1,
+      "edge_count": 11,
+      "edge_kind_counts": {
+        "duration": 3,
+        "hard_deadline": 3,
+        "release": 3,
+        "transfer": 2
+      },
+      "edges": [
+        {
+          "kind": "release",
+          "lower_bound_seconds": 0,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:local_shuttle:start",
+          "upper_bound_seconds": null
+        },
+        {
+          "kind": "hard_deadline",
+          "lower_bound_seconds": null,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:local_shuttle:finish",
+          "upper_bound_seconds": 1800
+        },
+        {
+          "kind": "release",
+          "lower_bound_seconds": 0,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:security_check:start",
+          "upper_bound_seconds": null
+        },
+        {
+          "kind": "hard_deadline",
+          "lower_bound_seconds": null,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:security_check:finish",
+          "upper_bound_seconds": 3000
+        },
+        {
+          "kind": "release",
+          "lower_bound_seconds": 0,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:gate_walk:start",
+          "upper_bound_seconds": null
+        },
+        {
+          "kind": "hard_deadline",
+          "lower_bound_seconds": null,
+          "source_node_id": "anchor",
+          "target_node_id": "activity:gate_walk:finish",
+          "upper_bound_seconds": 4200
+        },
+        {
+          "kind": "duration",
+          "lower_bound_seconds": 600,
+          "source_node_id": "activity:local_shuttle:start",
+          "target_node_id": "activity:local_shuttle:finish",
+          "upper_bound_seconds": 900
+        },
+        {
+          "kind": "transfer",
+          "lower_bound_seconds": 120,
+          "source_node_id": "activity:local_shuttle:finish",
+          "target_node_id": "activity:security_check:start",
+          "upper_bound_seconds": null
+        },
+        {
+          "kind": "duration",
+          "lower_bound_seconds": 300,
+          "source_node_id": "activity:security_check:start",
+          "target_node_id": "activity:security_check:finish",
+          "upper_bound_seconds": 600
+        },
+        {
+          "kind": "transfer",
+          "lower_bound_seconds": 60,
+          "source_node_id": "activity:security_check:finish",
+          "target_node_id": "activity:gate_walk:start",
+          "upper_bound_seconds": null
+        },
+        {
+          "kind": "duration",
+          "lower_bound_seconds": 240,
+          "source_node_id": "activity:gate_walk:start",
+          "target_node_id": "activity:gate_walk:finish",
+          "upper_bound_seconds": 360
+        }
+      ],
+      "graph_schema_version": 1,
+      "graph_sha256": "9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d",
+      "itinerary_sha256": "61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6",
+      "node_count": 7
+    },
+    "public_error_codes": [
+      "input_too_large",
+      "input_too_deep",
+      "invalid_utf8",
+      "invalid_json",
+      "duplicate_json_key",
+      "unknown_field",
+      "missing_field",
+      "invalid_type",
+      "out_of_range",
+      "invalid_identifier",
+      "invalid_timestamp",
+      "duplicate_activity_id",
+      "duplicate_transfer",
+      "self_transfer",
+      "unknown_transfer_reference",
+      "dependency_cycle",
+      "infeasible_deadline"
+    ],
+    "public_limits": {
+      "MAX_ACTIVITIES": 128,
+      "MAX_HORIZON_SECONDS": 2678400,
+      "MAX_INPUT_BYTES": 65536,
+      "MAX_JSON_DEPTH": 24,
+      "MAX_TRANSFERS": 512
+    }
+  },
+  "outputs": [
+    {
+      "bytes": 19154,
+      "path": "docs/visuals/generated/contract-boundary-matrix.svg",
+      "sha256": "3285a8f4a1987b123f5fa35aef6d92c8254f84e8c80e841c7412fe849bd43d0c"
+    },
+    {
+      "bytes": 21556,
+      "path": "docs/visuals/generated/temporal-dag.svg",
+      "sha256": "04afa88063127426535ec4191f7a8dacd10f02ca04cf220a27492f678abe0314"
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "bytes": 1065,
+      "path": "examples/synthetic_connection.v1.json",
+      "sha256": "725b27c91e2b24d9844434d048d35d07c454970436a26bbf9e30ce1b86bf33fb"
+    },
+    {
+      "bytes": 1076,
+      "path": "tctravel/__init__.py",
+      "sha256": "fb7a44d8e585e37c2a7b71753daf2535726b63fd9c1d269737d9f34936fa54dc"
+    },
+    {
+      "bytes": 9464,
+      "path": "tctravel/codec.py",
+      "sha256": "cd50cb292fe84a91a9274ce810d1aa2111b1c47b584aa808e284dc2a7331a193"
+    },
+    {
+      "bytes": 6449,
+      "path": "tctravel/compiler.py",
+      "sha256": "cff73deffd7a128a43f469d063e368dfbfffe7285401e95fadee45e00ca72291"
+    },
+    {
+      "bytes": 1629,
+      "path": "tctravel/errors.py",
+      "sha256": "3d476c7d4c93bfd627ca6ca9952f24a4236ac2ba4b41a0c90feb75d5eae12df3"
+    },
+    {
+      "bytes": 1082,
+      "path": "tctravel/model.py",
+      "sha256": "0f5aa6dd69cfc7366f047adffef121b058818623b9fa76ea7c2a9647ac6b3186"
+    },
+    {
+      "bytes": 7139,
+      "path": "tctravel/validation.py",
+      "sha256": "e6725b06110cc12fa0125077ead5d2008113340cce28c07f8752a2cc915e0f61"
+    },
+    {
+      "bytes": 46869,
+      "path": "tools/generate_visuals.py",
+      "sha256": "a91af529d800bee40275afc516c56a98978a8d000948732ce0092670222eae9d"
+    }
+  ]
+}

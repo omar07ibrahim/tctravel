@@ -123,6 +123,11 @@ print(canonical_graph_bytes(graph).decode("ascii"))
 Digests identify canonical contract and compiler output. They do not certify
 source truth, travel availability, safety, or predictive quality.
 
+The source-derived
+[compiled DAG and executed boundary matrix](visual-evidence.md) show this
+fixture's exact graph and representative public decoder outcomes. Both are
+reproduced with `python3 tools/generate_visuals.py --check`.
+
 ## Fail-closed boundary
 
 The decoder accepts only UTF-8 JSON at or below 64 KiB and scans nesting before

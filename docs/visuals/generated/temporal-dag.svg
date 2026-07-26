@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1240" width="1800" height="1240" role="img" aria-labelledby="dag-title dag-desc" data-itinerary-sha256="61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6" data-graph-sha256="9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d">
+  <title id="dag-title">Compiled temporal dependency DAG</title>
+  <desc id="dag-desc">The exact seven-node, eleven-edge graph compiled from the committed synthetic itinerary. Colored arrows show release, bounded duration, hard deadline, and transfer constraints. Full canonical SHA-256 digests are visible.</desc>
+  <metadata>{&quot;artifact&quot;:&quot;compiled_temporal_dag&quot;,&quot;contract_schema_version&quot;:1,&quot;edge_count&quot;:11,&quot;graph_schema_version&quot;:1,&quot;graph_sha256&quot;:&quot;9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d&quot;,&quot;itinerary_sha256&quot;:&quot;61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6&quot;,&quot;node_count&quot;:7}</metadata>
+  <defs>
+    <marker id="arrow-release" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrow-duration" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803d"/>
+    </marker>
+    <marker id="arrow-hard_deadline" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="arrow-transfer" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6d28d9"/>
+    </marker>
+  </defs>
+  <rect width="1800" height="1240" fill="#f8fafc"/>
+  <rect x="32" y="28" width="1736" height="156" rx="26" fill="#0f172a"/>
+  <text x="76" y="83" fill="#f8fafc" font-size="34" font-weight="700" font-family="Inter, Segoe UI, Arial, sans-serif">Compiled temporal dependency DAG</text>
+  <text x="76" y="122" fill="#cbd5e1" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif">contract v1 → graph v1 • 7 nodes • 11 constraints • synthetic fixture</text>
+  <text x="800" y="72" fill="#94a3b8" font-size="14" font-family="Inter, Segoe UI, Arial, sans-serif">canonical itinerary SHA-256</text>
+  <text x="800" y="98" fill="#f8fafc" font-size="15" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">61b76d3e8d6c5fb0e9b9ae65ab4a0043a3fd24e64182f1ed0a3a489bb2f30aa6</text>
+  <text x="800" y="130" fill="#94a3b8" font-size="14" font-family="Inter, Segoe UI, Arial, sans-serif">canonical graph SHA-256</text>
+  <text x="800" y="156" fill="#f8fafc" font-size="15" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">9b9cf2a2f8f2eb8f5776d7febff2ee724ef27fad9e59ccf85607349923f71f2d</text>
+  <text x="54" y="230" fill="#334155" font-size="17" font-weight="700" font-family="Inter, Segoe UI, Arial, sans-serif">Compiled structure</text>
+  <line x1="300" y1="224" x2="342" y2="224" stroke="#0369a1" stroke-width="5" marker-end="url(#arrow-release)"/>
+  <text x="355" y="230" fill="#475569" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">release lower bound (3)</text>
+  <line x1="660" y1="224" x2="702" y2="224" stroke="#15803d" stroke-width="5" marker-end="url(#arrow-duration)"/>
+  <text x="715" y="230" fill="#475569" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">duration interval (3)</text>
+  <line x1="1020" y1="224" x2="1062" y2="224" stroke="#b91c1c" stroke-width="5" marker-end="url(#arrow-hard_deadline)"/>
+  <text x="1075" y="230" fill="#475569" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">hard deadline upper bound (3)</text>
+  <line x1="1380" y1="224" x2="1422" y2="224" stroke="#6d28d9" stroke-width="5" marker-end="url(#arrow-transfer)"/>
+  <text x="1435" y="230" fill="#475569" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">minimum transfer gap (2)</text>
+  <rect x="42" y="256" width="1716" height="470" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <path d="M 228 490 Q 269 320 310 490" fill="none" stroke="#0369a1" stroke-width="4" marker-end="url(#arrow-release)"/>
+  <text x="269" y="392" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">release &gt;= 0 s</text>
+  <path d="M 228 490 Q 499 268 770 490" fill="none" stroke="#0369a1" stroke-width="4" marker-end="url(#arrow-release)"/>
+  <text x="499" y="366" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">release &gt;= 0 s</text>
+  <path d="M 228 490 Q 729 216 1230 490" fill="none" stroke="#0369a1" stroke-width="4" marker-end="url(#arrow-release)"/>
+  <text x="729" y="340" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">release &gt;= 0 s</text>
+  <path d="M 228 490 Q 374 650 520 490" fill="none" stroke="#b91c1c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-hard_deadline)"/>
+  <text x="374" y="598" text-anchor="middle" fill="#b91c1c" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">deadline &lt;= 1,800 s</text>
+  <path d="M 228 490 Q 604 690 980 490" fill="none" stroke="#b91c1c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-hard_deadline)"/>
+  <text x="604" y="618" text-anchor="middle" fill="#b91c1c" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">deadline &lt;= 3,000 s</text>
+  <path d="M 228 490 Q 834 730 1440 490" fill="none" stroke="#b91c1c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-hard_deadline)"/>
+  <text x="834" y="638" text-anchor="middle" fill="#b91c1c" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">deadline &lt;= 4,200 s</text>
+  <line x1="470" y1="490" x2="520" y2="490" stroke="#15803d" stroke-width="5" marker-end="url(#arrow-duration)"/>
+  <text x="495" y="420" text-anchor="middle" fill="#15803d" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">duration 600-900 s</text>
+  <line x1="930" y1="490" x2="980" y2="490" stroke="#15803d" stroke-width="5" marker-end="url(#arrow-duration)"/>
+  <text x="955" y="420" text-anchor="middle" fill="#15803d" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">duration 300-600 s</text>
+  <line x1="1390" y1="490" x2="1440" y2="490" stroke="#15803d" stroke-width="5" marker-end="url(#arrow-duration)"/>
+  <text x="1415" y="420" text-anchor="middle" fill="#15803d" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">duration 240-360 s</text>
+  <line x1="680" y1="490" x2="770" y2="490" stroke="#6d28d9" stroke-width="5" stroke-dasharray="4 5" marker-end="url(#arrow-transfer)"/>
+  <text x="725" y="572" text-anchor="middle" fill="#6d28d9" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">transfer &gt;= 120 s</text>
+  <line x1="1140" y1="490" x2="1230" y2="490" stroke="#6d28d9" stroke-width="5" stroke-dasharray="4 5" marker-end="url(#arrow-transfer)"/>
+  <text x="1185" y="572" text-anchor="middle" fill="#6d28d9" font-size="14" font-weight="700" style="paint-order:stroke;stroke:#ffffff;stroke-width:7px;stroke-linejoin:round" font-family="Inter, Segoe UI, Arial, sans-serif">transfer &gt;= 60 s</text>
+  <circle cx="150" cy="490" r="78" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+  <text x="150" y="483" text-anchor="middle" fill="#f8fafc" font-size="19" font-weight="700" font-family="Inter, Segoe UI, Arial, sans-serif">ANCHOR</text>
+  <text x="150" y="513" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">t = 0 s</text>
+  <rect x="310" y="432" width="160" height="116" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+  <text x="390" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">local_shuttle</text>
+  <text x="390" y="512" text-anchor="middle" fill="#0369a1" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">START</text>
+  <rect x="520" y="432" width="160" height="116" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="600" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">local_shuttle</text>
+  <text x="600" y="512" text-anchor="middle" fill="#15803d" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">FINISH</text>
+  <rect x="770" y="432" width="160" height="116" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+  <text x="850" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">security_check</text>
+  <text x="850" y="512" text-anchor="middle" fill="#0369a1" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">START</text>
+  <rect x="980" y="432" width="160" height="116" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="1060" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">security_check</text>
+  <text x="1060" y="512" text-anchor="middle" fill="#15803d" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">FINISH</text>
+  <rect x="1230" y="432" width="160" height="116" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+  <text x="1310" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">gate_walk</text>
+  <text x="1310" y="512" text-anchor="middle" fill="#0369a1" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">START</text>
+  <rect x="1440" y="432" width="160" height="116" rx="18" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="1520" y="478" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">gate_walk</text>
+  <text x="1520" y="512" text-anchor="middle" fill="#15803d" font-size="16" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">FINISH</text>
+  <text x="58" y="774" fill="#334155" font-size="18" font-weight="700" font-family="Inter, Segoe UI, Arial, sans-serif">Exact compiled constraint ledger</text>
+  <text x="430" y="774" fill="#64748b" font-size="14" font-family="Inter, Segoe UI, Arial, sans-serif">Every card below is emitted from one TemporalEdge.</text>
+  <g data-edge-kind="release" data-source-node-id="anchor" data-target-node-id="activity:local_shuttle:start" data-lower-bound-seconds="0" data-upper-bound-seconds="">
+    <rect x="42" y="794" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="42" y="794" width="8" height="116" rx="4" fill="#0369a1"/>
+    <text x="66" y="821" fill="#0369a1" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">RELEASE • lower &gt;= 0 s</text>
+    <text x="66" y="850" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="66" y="876" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:local_shuttle:start</text>
+  </g>
+  <g data-edge-kind="hard_deadline" data-source-node-id="anchor" data-target-node-id="activity:local_shuttle:finish" data-lower-bound-seconds="" data-upper-bound-seconds="1800">
+    <rect x="474" y="794" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="474" y="794" width="8" height="116" rx="4" fill="#b91c1c"/>
+    <text x="498" y="821" fill="#b91c1c" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">HARD_DEADLINE • upper &lt;= 1,800 s</text>
+    <text x="498" y="850" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="498" y="876" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:local_shuttle:finish</text>
+  </g>
+  <g data-edge-kind="release" data-source-node-id="anchor" data-target-node-id="activity:security_check:start" data-lower-bound-seconds="0" data-upper-bound-seconds="">
+    <rect x="906" y="794" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="906" y="794" width="8" height="116" rx="4" fill="#0369a1"/>
+    <text x="930" y="821" fill="#0369a1" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">RELEASE • lower &gt;= 0 s</text>
+    <text x="930" y="850" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="930" y="876" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:security_check:start</text>
+  </g>
+  <g data-edge-kind="hard_deadline" data-source-node-id="anchor" data-target-node-id="activity:security_check:finish" data-lower-bound-seconds="" data-upper-bound-seconds="3000">
+    <rect x="1338" y="794" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="1338" y="794" width="8" height="116" rx="4" fill="#b91c1c"/>
+    <text x="1362" y="821" fill="#b91c1c" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">HARD_DEADLINE • upper &lt;= 3,000 s</text>
+    <text x="1362" y="850" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="1362" y="876" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:security_check:finish</text>
+  </g>
+  <g data-edge-kind="release" data-source-node-id="anchor" data-target-node-id="activity:gate_walk:start" data-lower-bound-seconds="0" data-upper-bound-seconds="">
+    <rect x="42" y="920" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="42" y="920" width="8" height="116" rx="4" fill="#0369a1"/>
+    <text x="66" y="947" fill="#0369a1" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">RELEASE • lower &gt;= 0 s</text>
+    <text x="66" y="976" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="66" y="1002" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:gate_walk:start</text>
+  </g>
+  <g data-edge-kind="hard_deadline" data-source-node-id="anchor" data-target-node-id="activity:gate_walk:finish" data-lower-bound-seconds="" data-upper-bound-seconds="4200">
+    <rect x="474" y="920" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="474" y="920" width="8" height="116" rx="4" fill="#b91c1c"/>
+    <text x="498" y="947" fill="#b91c1c" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">HARD_DEADLINE • upper &lt;= 4,200 s</text>
+    <text x="498" y="976" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from anchor</text>
+    <text x="498" y="1002" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:gate_walk:finish</text>
+  </g>
+  <g data-edge-kind="duration" data-source-node-id="activity:local_shuttle:start" data-target-node-id="activity:local_shuttle:finish" data-lower-bound-seconds="600" data-upper-bound-seconds="900">
+    <rect x="906" y="920" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="906" y="920" width="8" height="116" rx="4" fill="#15803d"/>
+    <text x="930" y="947" fill="#15803d" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">DURATION • lower 600 s / upper 900 s</text>
+    <text x="930" y="976" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from activity:local_shuttle:start</text>
+    <text x="930" y="1002" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:local_shuttle:finish</text>
+  </g>
+  <g data-edge-kind="transfer" data-source-node-id="activity:local_shuttle:finish" data-target-node-id="activity:security_check:start" data-lower-bound-seconds="120" data-upper-bound-seconds="">
+    <rect x="1338" y="920" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="1338" y="920" width="8" height="116" rx="4" fill="#6d28d9"/>
+    <text x="1362" y="947" fill="#6d28d9" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">TRANSFER • lower &gt;= 120 s</text>
+    <text x="1362" y="976" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from activity:local_shuttle:finish</text>
+    <text x="1362" y="1002" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:security_check:start</text>
+  </g>
+  <g data-edge-kind="duration" data-source-node-id="activity:security_check:start" data-target-node-id="activity:security_check:finish" data-lower-bound-seconds="300" data-upper-bound-seconds="600">
+    <rect x="42" y="1046" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="42" y="1046" width="8" height="116" rx="4" fill="#15803d"/>
+    <text x="66" y="1073" fill="#15803d" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">DURATION • lower 300 s / upper 600 s</text>
+    <text x="66" y="1102" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from activity:security_check:start</text>
+    <text x="66" y="1128" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:security_check:finish</text>
+  </g>
+  <g data-edge-kind="transfer" data-source-node-id="activity:security_check:finish" data-target-node-id="activity:gate_walk:start" data-lower-bound-seconds="60" data-upper-bound-seconds="">
+    <rect x="474" y="1046" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="474" y="1046" width="8" height="116" rx="4" fill="#6d28d9"/>
+    <text x="498" y="1073" fill="#6d28d9" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">TRANSFER • lower &gt;= 60 s</text>
+    <text x="498" y="1102" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from activity:security_check:finish</text>
+    <text x="498" y="1128" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:gate_walk:start</text>
+  </g>
+  <g data-edge-kind="duration" data-source-node-id="activity:gate_walk:start" data-target-node-id="activity:gate_walk:finish" data-lower-bound-seconds="240" data-upper-bound-seconds="360">
+    <rect x="906" y="1046" width="410" height="116" rx="16" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+    <rect x="906" y="1046" width="8" height="116" rx="4" fill="#15803d"/>
+    <text x="930" y="1073" fill="#15803d" font-size="14" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">DURATION • lower 240 s / upper 360 s</text>
+    <text x="930" y="1102" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">from activity:gate_walk:start</text>
+    <text x="930" y="1128" fill="#475569" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">to   activity:gate_walk:finish</text>
+  </g>
+  <rect x="42" y="1178" width="1716" height="38" rx="14" fill="#e2e8f0"/>
+  <text x="900" y="1203" text-anchor="middle" fill="#334155" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">Constraint compilation only — no route choice, live travel data, reliability estimate, or prediction.</text>
+</svg>
