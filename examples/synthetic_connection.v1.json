@@ -1,0 +1,47 @@
+{
+  "activities": [
+    {
+      "duration": {
+        "maximum_seconds": 900,
+        "minimum_seconds": 600
+      },
+      "hard_deadline_offset_seconds": 1800,
+      "id": "local_shuttle",
+      "release_offset_seconds": 0
+    },
+    {
+      "duration": {
+        "maximum_seconds": 600,
+        "minimum_seconds": 300
+      },
+      "hard_deadline_offset_seconds": 3000,
+      "id": "security_check",
+      "release_offset_seconds": 0
+    },
+    {
+      "duration": {
+        "maximum_seconds": 360,
+        "minimum_seconds": 240
+      },
+      "hard_deadline_offset_seconds": 4200,
+      "id": "gate_walk",
+      "release_offset_seconds": 0
+    }
+  ],
+  "anchor_time_utc": "2026-08-01T08:00:00Z",
+  "horizon_seconds": 7200,
+  "itinerary_id": "synthetic_connection",
+  "schema_version": 1,
+  "transfers": [
+    {
+      "from_activity_id": "local_shuttle",
+      "minimum_seconds": 120,
+      "to_activity_id": "security_check"
+    },
+    {
+      "from_activity_id": "security_check",
+      "minimum_seconds": 60,
+      "to_activity_id": "gate_walk"
+    }
+  ]
+}

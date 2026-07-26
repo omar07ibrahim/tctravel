@@ -1,7 +1,7 @@
 [project]
-name = "tctravel-legacy-attestation"
-version = "0.1.0"
-description = "Offline, fail-closed attestation for the quarantined TCTravel legacy snapshot"
+name = "tctravel-temporal-compiler"
+version = "0.2.0"
+description = "Strict itinerary contracts and deterministic temporal dependency graphs"
 requires-python = ">=3.11"
 dependencies = []
 

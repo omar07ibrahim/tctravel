@@ -1,15 +1,15 @@
 # TCTravel — Time-Critical Travel Compiler
 
-TCTravel is being rebuilt as an original, non-NLP reliability system for
-time-critical travel plans. The intended core will compile hard timing
-constraints, transfer dependencies, and uncertainty budgets into an auditable
-execution plan. It will answer a narrow engineering question: **is this plan
-still feasible, and which dependency fails first if conditions change?**
+TCTravel is an original, non-NLP reliability system for time-critical travel
+plans. Its first executable core converts an untrusted, versioned itinerary
+into a deterministic temporal dependency graph: hard completion deadlines,
+bounded activity durations, earliest starts, and transfer dependencies become
+explicit machine-readable constraints.
 
-This repository does not have that executable core yet. The current commit is
-only a fail-closed attestation layer around nine inherited Nicepage artifacts.
-It makes the starting state measurable without presenting the inherited site as
-new work.
+This slice is deliberately narrow. It establishes trustworthy input and graph
+semantics before route search, simulation, or statistical calibration are
+added. The inherited Nicepage snapshot remains quarantined behind an
+independent fail-closed attestation layer.
 
 ## Current state
 
@@ -19,7 +19,11 @@ new work.
 | Nicepage 4.14.1 / trial / unpublished-state checks | Implemented |
 | Embedded JPEG duplicate-map verification | Implemented |
 | Redacted contact, prose, media, and third-party-mark risk counts | Implemented |
-| Constraint compiler, temporal graph, reliability model, CLI, or API | Planned |
+| Strict version-1 itinerary JSON decoder | Implemented |
+| Immutable itinerary and temporal graph domain models | Implemented |
+| Deterministic dependency DAG compilation and canonical SHA-256 | Implemented |
+| Duplicate, reference, cycle, deadline, and resource-bound validation | Implemented |
+| Reliability model, routing, simulation, CLI, or API | Planned |
 | Product screenshots, diagrams, charts, or demos | Not yet available |
 
 No visual is included merely to make the repository look complete. Real,
@@ -56,21 +60,53 @@ bytes, or filesystem paths. It rejects a missing or additional legacy HTML
 file, byte drift, manifest schema drift, generator-state drift, a changed JPEG
 duplicate map, and changed third-party-mark counts.
 
-## Planned engineering direction
+## Compile the synthetic contract
 
-The next implementation slice will start independently of the inherited site:
+The example is original synthetic data. Decoding and graph compilation make no
+network or filesystem calls; reading the file is explicit at the call site.
 
-1. compile a versioned journey specification into a temporal dependency graph;
-2. propagate bounded delay distributions through transfers and hard deadlines;
-3. produce deterministic feasibility decisions and machine-readable failure
+```python
+from pathlib import Path
+
+from tctravel import (
+    compile_temporal_graph,
+    decode_itinerary_json,
+    graph_digest,
+    itinerary_digest,
+)
+
+itinerary = decode_itinerary_json(
+    Path("examples/synthetic_connection.v1.json").read_bytes()
+)
+graph = compile_temporal_graph(itinerary)
+
+print(itinerary_digest(itinerary))
+print(graph.activity_order)
+print(graph_digest(graph))
+```
+
+Equivalent activity, transfer, and JSON-key orderings produce identical
+canonical bytes and digests. Public errors contain stable codes rather than
+submitted values or local paths. See
+[the version-1 contract](docs/input-contract-v1.md) for the exact schema,
+resource limits, constraint edges, and claim boundaries.
+
+## Engineering direction
+
+The implementation proceeds independently of the inherited site:
+
+1. compile a strict versioned itinerary into a temporal dependency graph;
+2. add separately evaluated disruption scenarios and uncertainty models;
+3. produce auditable feasibility decisions and machine-readable failure
    explanations;
 4. replay disruption scenarios and compare robust plans against simple
    shortest-duration baselines; and
 5. generate every published diagram, chart, CLI capture, and demo from reviewed
    source inputs.
 
-No booking, live-routing, recommendation, or predictive-quality claim is made
-at this stage.
+No booking, live-routing, recommendation, stochastic calibration, or
+predictive-quality claim is made at this stage. A compiled graph records
+constraints; it does not prove that all declared durations meet every deadline.
 
 ## Legacy quarantine
 
