@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "legacy_file_count": 9,
+    "legacy_total_bytes": 740710,
+    "inventory": [
+      {
+        "path": "4-days-tour_67186623.html",
+        "bytes": 25953,
+        "sha256": "0015e2a5233ed6bd5c62317722a6c31b6e26c9cc500d48a3e8c6bbb95645d4d7"
+      },
+      {
+        "path": "Azerbaijan_31890772.html",
+        "bytes": 35089,
+        "sha256": "f3cf9ed0d5be17a10a651f19eb3e84f4e8beba77829f52d33bb65787e619b2e0"
+      },
+      {
+        "path": "Baku-Tour_92202027.html",
+        "bytes": 56598,
+        "sha256": "73ff90e24129aef1610f0eb92b489a542656950cf46e7d56bba4a69123e01388"
+      },
+      {
+        "path": "Baku_83519103.html",
+        "bytes": 27226,
+        "sha256": "7c900778521367ab22b35a4960c6263ffedc41d8b267e81aae3eea9450450484"
+      },
+      {
+        "path": "Gebele-Tour_47048317.html",
+        "bytes": 25799,
+        "sha256": "5df088c45ceee1940a7bf897bb581289af29e6faf6bf34134b887cbd8b8c2eb7"
+      },
+      {
+        "path": "Shamakha-_58120323.html",
+        "bytes": 25120,
+        "sha256": "f56238968c4197941a93a59f34714c00e419e82189cf708f8e0d50c1699740f4"
+      },
+      {
+        "path": "TCtravel_30109399.html",
+        "bytes": 143703,
+        "sha256": "44ade2998ba23be9601f78c45baf957d6bbfb5fea236e7b9e115c3b28b691025"
+      },
+      {
+        "path": "Transcaucasus_40158431.html",
+        "bytes": 19536,
+        "sha256": "346f7a03650aed7fd4a29cd30ef869aba738e62e1d52fa6d1e9528c2e12ad262"
+      },
+      {
+        "path": "site.json",
+        "bytes": 381686,
+        "sha256": "7b82ad414da4c66d44d6d7b1d79240d5bc4827908487aacb501eaa5171f438b3"
+      }
+    ]
+  },
+  "generator_contract": {
+    "metadata_path": "site.json",
+    "app_version": "4.14.1",
+    "is_trial": true,
+    "unpublished": {
+      "date_published": null,
+      "public_url": null,
+      "custom_domain_url": null,
+      "server_site_id": 0
+    }
+  },
+  "embedded_jpeg_contract": {
+    "source_path": "site.json",
+    "json_field": "settings",
+    "mime_type": "image/jpeg",
+    "total_occurrences": 6,
+    "unique_payloads": [
+      {
+        "sha256": "5af30b707d25ef003d1968b86ef685ddbf51b4d1e6de0d33292b0671f0223ff6",
+        "decoded_bytes": 28523,
+        "locations": [
+          {
+            "path": "site.json",
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "sha256": "772eeae6b60d1c8c5cf0fa0f64ca92469bdf367e1ca4d7a1ba1ac8da58921f2a",
+        "decoded_bytes": 41645,
+        "locations": [
+          {
+            "path": "site.json",
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "sha256": "cfe71853fd68e2645e2bd69074eec0e0109837fc9e7aaf9daf49732aaae1d283",
+        "decoded_bytes": 37053,
+        "locations": [
+          {
+            "path": "site.json",
+            "occurrences": 2
+          }
+        ]
+      }
+    ]
+  },
+  "redacted_risk_contract": {
+    "legacy_prose_documents": 8,
+    "visible_contact_surface_documents": 1,
+    "visible_email_like_occurrences": 1,
+    "visible_phone_like_occurrences": 2,
+    "embedded_jpeg_occurrences": 6,
+    "embedded_jpeg_unique_payloads": 3,
+    "third_party_mark_occurrences": 6,
+    "third_party_mark_unique_payloads": 1
+  }
+}

@@ -1,0 +1,10 @@
+[project]
+name = "tctravel-legacy-attestation"
+version = "0.1.0"
+description = "Offline, fail-closed attestation for the quarantined TCTravel legacy snapshot"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pyright]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
