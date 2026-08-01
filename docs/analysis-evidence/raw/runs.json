@@ -1,0 +1,123 @@
+{
+  "runs": [
+    {
+      "case_id": "robust_fixture",
+      "command": [
+        "tctravel-analyze",
+        "examples/synthetic_connection.v1.json"
+      ],
+      "derivation": null,
+      "exit_code": 0,
+      "input_kind": "committed_fixture",
+      "input_sha256": "725b27c91e2b24d9844434d048d35d07c454970436a26bbf9e30ce1b86bf33fb",
+      "observation": {
+        "analysis_digest": "7ddafbf24ec6300e127eb15db691d13676bbf9c83e69efc34e75695841b840a2",
+        "best_case_minimum_deadline_slack_seconds": 1200,
+        "status": "robust",
+        "worst_case_minimum_deadline_slack_seconds": 900,
+        "worst_case_witness_chain": [
+          "local_shuttle"
+        ]
+      },
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2519,
+      "stdout_sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+    },
+    {
+      "case_id": "duration_sensitive_fixture",
+      "command": [
+        "tctravel-analyze",
+        "examples/synthetic_tight_connection.v1.json"
+      ],
+      "derivation": null,
+      "exit_code": 1,
+      "input_kind": "committed_fixture",
+      "input_sha256": "8e02c3f8244a83a22a4b48868761ecf4f3316cb55fc161f469df3db42ee31058",
+      "observation": {
+        "analysis_digest": "35dfcc56368c12f3a8d4e12a4e715dd1f4fc9cef30a4613c736cdb412bfc0c2e",
+        "best_case_minimum_deadline_slack_seconds": 300,
+        "status": "duration_sensitive",
+        "worst_case_minimum_deadline_slack_seconds": -120,
+        "worst_case_witness_chain": [
+          "local_shuttle",
+          "security_check"
+        ]
+      },
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2553,
+      "stdout_sha256": "5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177"
+    },
+    {
+      "case_id": "exact_deadline_equality",
+      "command": [
+        "tctravel-analyze",
+        "<derived:exact-deadline-equality>"
+      ],
+      "derivation": "tight fixture with security_check deadline set to 1620",
+      "exit_code": 0,
+      "input_kind": "derived_probe",
+      "input_sha256": "4d514b4bf2cd4848c603f4fbce1f4f47563b143ee9f421b295111036332543ae",
+      "observation": {
+        "analysis_digest": "3eac0cfbebfda2cf211ccc7c637b7890d0f78e9f26be5701ef5ea137cc4b8f36",
+        "best_case_minimum_deadline_slack_seconds": 300,
+        "status": "robust",
+        "worst_case_minimum_deadline_slack_seconds": 0,
+        "worst_case_witness_chain": [
+          "local_shuttle",
+          "security_check",
+          "gate_walk"
+        ]
+      },
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2558,
+      "stdout_sha256": "db470033a5cb13a38d6288506bde2f0bedf2ae761a8536b6e6fcf0bf3a9d099b"
+    },
+    {
+      "case_id": "minimum_bound_rejection",
+      "command": [
+        "tctravel-analyze",
+        "<derived:minimum-bound-rejection>"
+      ],
+      "derivation": "robust fixture with local_shuttle deadline set to 599",
+      "exit_code": 3,
+      "input_kind": "derived_probe",
+      "input_sha256": "54250595160bdff594addd4ca093d6e116974c8da9de4db6ed11b94dfbc743ab",
+      "observation": {
+        "error_code": "infeasible_deadline"
+      },
+      "stderr_bytes": 41,
+      "stderr_sha256": "7275d3a389f805e7cff6ac42606e35cf92d9f4bf92355a044097fc097a7a40a4",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case_id": "reordered_input_invariance",
+      "command": [
+        "tctravel-analyze",
+        "<derived:reordered-input>"
+      ],
+      "derivation": "robust fixture with reversed arrays and object keys",
+      "exit_code": 0,
+      "input_kind": "derived_probe",
+      "input_sha256": "334a5c12ae7fe0440e3b69510a0dd0f5cf7851cd931508a6e62573e9746f4c70",
+      "observation": {
+        "analysis_digest": "7ddafbf24ec6300e127eb15db691d13676bbf9c83e69efc34e75695841b840a2",
+        "best_case_minimum_deadline_slack_seconds": 1200,
+        "status": "robust",
+        "worst_case_minimum_deadline_slack_seconds": 900,
+        "worst_case_witness_chain": [
+          "local_shuttle"
+        ]
+      },
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2519,
+      "stdout_sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+    }
+  ],
+  "schema_version": 1,
+  "subject_revision": "7e9951e65941d05c6b757b1c2ade4f30af6cd9f8"
+}

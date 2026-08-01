@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="slack-title slack-desc" data-axis-end-x="1420" data-scale-max="3000" data-scale-min="-300" data-value-label-x="1712" data-zero-x="510.9">
+  <title id="slack-title">Executed deadline-slack profile</title>
+  <desc id="slack-desc">Best and worst deadline slack share one signed scale. Direct labels show the exact values observed in installed CLI reports.</desc>
+  <rect width="1800" height="1120" fill="#f8fafc"/>
+  <rect x="32" y="28" width="1736" height="136" rx="26" fill="#0f172a"/>
+  <text x="76" y="84" fill="#f8fafc" font-size="34" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Executed deadline-slack profile</text>
+  <text x="76" y="124" fill="#cbd5e1" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif">best → worst margin on one shared scale · negative crosses the deadline</text>
+  <rect x="48" y="194" width="1704" height="850" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="510.9" y1="250" x2="510.9" y2="980" stroke="#0f172a" stroke-width="3"/>
+  <text x="510.9" y="232" text-anchor="middle" fill="#0f172a" font-size="13" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">0s deadline boundary</text>
+  <line x1="420.0" y1="250" x2="420.0" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="420.0" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">-300s</text>
+  <line x1="601.8" y1="250" x2="601.8" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="601.8" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">+300s</text>
+  <line x1="783.6" y1="250" x2="783.6" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="783.6" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">+900s</text>
+  <line x1="965.5" y1="250" x2="965.5" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="965.5" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">+1500s</text>
+  <line x1="1147.3" y1="250" x2="1147.3" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="1147.3" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">+2100s</text>
+  <line x1="1329.1" y1="250" x2="1329.1" y2="980" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="1329.1" y="1008" text-anchor="middle" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">+2700s</text>
+  <g data-fixture="robust" data-activity-id="local_shuttle" data-best-slack="1200" data-worst-slack="900">
+    <text x="82" y="300" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">local_shuttle</text>
+    <text x="82" y="324" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <line x1="783.6" y1="306" x2="874.5" y2="306" stroke="#64748b" stroke-width="5"/>
+    <circle cx="874.5" cy="306" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 783.6 293 L 771.6 316 L 795.6 316 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1712" y="311" text-anchor="end" fill="#334155" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +1200s → worst +900s</text>
+  </g>
+  <g data-fixture="robust" data-activity-id="security_check" data-best-slack="1980" data-worst-slack="1380">
+    <text x="82" y="405" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">security_check</text>
+    <text x="82" y="429" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <line x1="929.1" y1="411" x2="1110.9" y2="411" stroke="#64748b" stroke-width="5"/>
+    <circle cx="1110.9" cy="411" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 929.1 398 L 917.1 421 L 941.1 421 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1712" y="416" text-anchor="end" fill="#334155" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +1980s → worst +1380s</text>
+  </g>
+  <g data-fixture="robust" data-activity-id="gate_walk" data-best-slack="2880" data-worst-slack="2160">
+    <text x="82" y="510" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">gate_walk</text>
+    <text x="82" y="534" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <line x1="1165.5" y1="516" x2="1383.6" y2="516" stroke="#64748b" stroke-width="5"/>
+    <circle cx="1383.6" cy="516" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 1165.5 503 L 1153.5 526 L 1177.5 526 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1712" y="521" text-anchor="end" fill="#334155" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +2880s → worst +2160s</text>
+  </g>
+  <g data-fixture="duration-sensitive" data-activity-id="local_shuttle" data-best-slack="300" data-worst-slack="0">
+    <text x="82" y="615" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">local_shuttle</text>
+    <text x="82" y="639" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">duration-sensitive</text>
+    <line x1="510.9" y1="621" x2="601.8" y2="621" stroke="#64748b" stroke-width="5"/>
+    <circle cx="601.8" cy="621" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 510.9 608 L 498.9 631 L 522.9 631 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1712" y="626" text-anchor="end" fill="#334155" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +300s → worst +0s</text>
+  </g>
+  <g data-fixture="duration-sensitive" data-activity-id="security_check" data-best-slack="480" data-worst-slack="-120">
+    <text x="82" y="720" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">security_check</text>
+    <text x="82" y="744" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">duration-sensitive</text>
+    <line x1="474.5" y1="726" x2="656.4" y2="726" stroke="#64748b" stroke-width="5"/>
+    <circle cx="656.4" cy="726" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 474.5 713 L 462.5 736 L 486.5 736 Z" fill="#fecdd3" stroke="#be123c" stroke-width="3"/>
+    <text x="1712" y="731" text-anchor="end" fill="#be123c" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +480s → worst -120s</text>
+  </g>
+  <g data-fixture="duration-sensitive" data-activity-id="gate_walk" data-best-slack="720" data-worst-slack="0">
+    <text x="82" y="825" fill="#0f172a" font-size="15" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">gate_walk</text>
+    <text x="82" y="849" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">duration-sensitive</text>
+    <line x1="510.9" y1="831" x2="729.1" y2="831" stroke="#64748b" stroke-width="5"/>
+    <circle cx="729.1" cy="831" r="11" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <path d="M 510.9 818 L 498.9 841 L 522.9 841 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1712" y="836" text-anchor="end" fill="#334155" font-size="14" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">best +720s → worst +0s</text>
+  </g>
+  <circle cx="90" cy="1074" r="9" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+  <text x="110" y="1079" fill="#475569" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">best-case slack</text>
+  <path d="M 292 1061 L 281 1082 L 303 1082 Z" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="315" y="1079" fill="#475569" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">worst-case slack</text>
+</svg>

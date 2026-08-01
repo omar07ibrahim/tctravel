@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="workflow-title workflow-desc" data-input-cap-bytes="65536" data-output-cap-bytes="1048576" data-source-count="4" data-source-records-sha256="8a7652a9e046d4b2ad4d36c8ccc2e3f79e146aec13435c9cc741a276c85a985b" data-subject-revision="7e9951e65941d05c6b757b1c2ade4f30af6cd9f8" data-symbol-contract-sha256="6b9cb2e1026c187aad0550669ca1b6dab636b31f0858c73dc8857b7219899624">
+  <title id="workflow-title">Installed-wheel analysis workflow</title>
+  <desc id="workflow-desc">The bounded contract, deterministic graph compiler, two endpoint passes, and canonical report encoder exercised by the evidence run.</desc>
+  <rect width="1800" height="1120" fill="#f8fafc"/>
+  <metadata id="workflow-source-bindings" data-records-sha256="8a7652a9e046d4b2ad4d36c8ccc2e3f79e146aec13435c9cc741a276c85a985b">
+    <metadata data-source-path="tctravel/analysis.py" data-blob-oid="deea24ad1806223a1cbf5fc00b9fe438f2616475" data-source-sha256="9cd803c0c6662e1a5cbca82afde5be9abba087f677f4c5b7d2e088e2f2b2110e"/>
+    <metadata data-source-path="tctravel/cli.py" data-blob-oid="c9d6e8a068c494686c9e9d3e71a719797a6c615e" data-source-sha256="f99e69a10f8a1b9734c231e0afafc477e7ea11b78414b0db329a7878d0da3f16"/>
+    <metadata data-source-path="tctravel/codec.py" data-blob-oid="a2ff80fd0ff42630369492812c578e85d29afb22" data-source-sha256="cd50cb292fe84a91a9274ce810d1aa2111b1c47b584aa808e284dc2a7331a193"/>
+    <metadata data-source-path="tctravel/compiler.py" data-blob-oid="9a66215f897acedb21ab8bf84f75eb06bd4c2eb2" data-source-sha256="cff73deffd7a128a43f469d063e368dfbfffe7285401e95fadee45e00ca72291"/>
+  </metadata>
+  <metadata id="workflow-symbol-contract" data-records-sha256="6b9cb2e1026c187aad0550669ca1b6dab636b31f0858c73dc8857b7219899624">
+    <metadata data-display-symbol="decode_itinerary_json" data-definition-path="tctravel/codec.py" data-definition-line="229" data-call-count="1" data-call-path="tctravel/cli.py"/>
+    <metadata data-display-symbol="compile_temporal_graph" data-definition-path="tctravel/compiler.py" data-definition-line="69" data-call-count="1" data-call-path="tctravel/analysis.py"/>
+    <metadata data-display-symbol="_analyze_scenario" data-definition-path="tctravel/analysis.py" data-definition-line="77" data-call-count="2" data-call-path="tctravel/analysis.py"/>
+    <metadata data-display-symbol="canonical_analysis_bytes" data-definition-path="tctravel/analysis.py" data-definition-line="303" data-call-count="1" data-call-path="tctravel/cli.py"/>
+  </metadata>
+  <rect x="32" y="28" width="1736" height="136" rx="26" fill="#0f172a"/>
+  <text x="76" y="84" fill="#f8fafc" font-size="34" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Installed-wheel execution architecture</text>
+  <text x="76" y="124" fill="#cbd5e1" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif">one-way evidence flow · committed Git blobs → isolated CLI → captured bytes</text>
+  <g data-step="1" data-label="Bounded JSON">
+    <rect x="180" y="208" width="1440" height="118" rx="24" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <circle cx="244" cy="267" r="34" fill="#0369a1"/>
+    <text x="244" y="277" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" font-family="Inter, Segoe UI, Arial, sans-serif">1</text>
+    <text x="310" y="257" fill="#0f172a" font-size="24" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">Bounded JSON</text>
+    <text x="310" y="290" fill="#475569" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif">≤ 65,536 bytes · depth ≤ 24</text>
+  </g>
+  <line x1="900" y1="326" x2="900" y2="359" stroke="#64748b" stroke-width="5"/>
+  <path d="M 900 366 L 885 345 L 915 345 Z" fill="#64748b"/>
+  <g data-step="2" data-label="decode_itinerary_json">
+    <rect x="180" y="374" width="1440" height="118" rx="24" fill="#fef3c7" stroke="#a16207" stroke-width="3"/>
+    <circle cx="244" cy="433" r="34" fill="#a16207"/>
+    <text x="244" y="443" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" font-family="Inter, Segoe UI, Arial, sans-serif">2</text>
+    <text x="310" y="423" fill="#0f172a" font-size="24" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">decode_itinerary_json</text>
+    <text x="310" y="456" fill="#475569" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif">strict types · stable redacted errors</text>
+  </g>
+  <line x1="900" y1="492" x2="900" y2="525" stroke="#64748b" stroke-width="5"/>
+  <path d="M 900 532 L 885 511 L 915 511 Z" fill="#64748b"/>
+  <g data-step="3" data-label="compile_temporal_graph">
+    <rect x="180" y="540" width="1440" height="118" rx="24" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+    <circle cx="244" cy="599" r="34" fill="#6d28d9"/>
+    <text x="244" y="609" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" font-family="Inter, Segoe UI, Arial, sans-serif">3</text>
+    <text x="310" y="589" fill="#0f172a" font-size="24" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">compile_temporal_graph</text>
+    <text x="310" y="622" fill="#475569" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif">lexical DAG · canonical graph digest</text>
+  </g>
+  <line x1="900" y1="658" x2="900" y2="691" stroke="#64748b" stroke-width="5"/>
+  <path d="M 900 698 L 885 677 L 915 677 Z" fill="#64748b"/>
+  <g data-step="4" data-label="_analyze_scenario × 2">
+    <rect x="180" y="706" width="1440" height="118" rx="24" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <circle cx="244" cy="765" r="34" fill="#15803d"/>
+    <text x="244" y="775" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" font-family="Inter, Segoe UI, Arial, sans-serif">4</text>
+    <text x="310" y="755" fill="#0f172a" font-size="24" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">_analyze_scenario × 2</text>
+    <text x="310" y="788" fill="#475569" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif">all-minimum + all-maximum max-plus passes</text>
+  </g>
+  <line x1="900" y1="824" x2="900" y2="857" stroke="#64748b" stroke-width="5"/>
+  <path d="M 900 864 L 885 843 L 915 843 Z" fill="#64748b"/>
+  <g data-step="5" data-label="canonical_analysis_bytes">
+    <rect x="180" y="872" width="1440" height="118" rx="24" fill="#ffe4e6" stroke="#be123c" stroke-width="3"/>
+    <circle cx="244" cy="931" r="34" fill="#be123c"/>
+    <text x="244" y="941" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="900" font-family="Inter, Segoe UI, Arial, sans-serif">5</text>
+    <text x="310" y="921" fill="#0f172a" font-size="24" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">canonical_analysis_bytes</text>
+    <text x="310" y="954" fill="#475569" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif">ASCII JSON + SHA-256 · ≤ 1,048,576 bytes</text>
+  </g>
+</svg>

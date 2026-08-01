@@ -1,0 +1,864 @@
+{
+  "artifacts": [
+    {
+      "bytes": 8496,
+      "claim": "Five executed CLI decisions with exact exits and output identities.",
+      "derived_from": [
+        "robust_fixture",
+        "duration_sensitive_fixture",
+        "exact_deadline_equality",
+        "minimum_bound_rejection",
+        "reordered_input_invariance"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/analysis-decision-matrix.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "ca5dc6b29efa2a65ce55ff7008e9f5f8e04d7714ceabff198309c269ce4d986c"
+    },
+    {
+      "bytes": 7091,
+      "claim": "Installed-wheel stages and observed public bounds, with architecture labels bound to exact subject source blobs embedded in the SVG.",
+      "derived_from": [
+        "runtime_contract",
+        "subject:tctravel/analysis.py",
+        "subject:tctravel/cli.py",
+        "subject:tctravel/codec.py",
+        "subject:tctravel/compiler.py"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/analysis-workflow.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "da8a02c4e56d7cc9348dc2251a47d6696af80e8a63d3a4841754990d4b4dbb7d"
+    },
+    {
+      "bytes": 79638,
+      "claim": "Deterministic replay of captured run records; frame timing is explicitly illustrative.",
+      "derived_from": [
+        "robust_fixture",
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/gif",
+      "path": "docs/analysis-evidence/generated/cli-demo.gif",
+      "presentation": {
+        "decoded_rgb_frame_sha256": [
+          "8d3ab2b69f7507be82b334d4863e847d691fc7d32695dcccbecc50f1912a7191",
+          "118e49b354f5d6063f3d494c46cb910269c39eea94a7a6a535e9e16528c1e7b4",
+          "b9c8c5da2d28981fbd2b1f1bf253ab2a52310c21e76babc4af8a77e0e326ee82",
+          "6b78d81f0ca2e48643a9d486a4b648b9ae1a24f2c80b37735c4f295a6e2c3248"
+        ],
+        "frame_count": 4,
+        "frame_durations_ms": [
+          1200,
+          2200,
+          1200,
+          2800
+        ],
+        "height": 1120,
+        "loop": 0,
+        "timing_semantics": "illustrative",
+        "width": 1800
+      },
+      "sha256": "d197dd14f8b6498667b233eda94cc6a7972c5f23ba77c54b0de2afc29fb7bab5"
+    },
+    {
+      "bytes": 102414,
+      "claim": "Complete tight-run stdout rendered from exact captured ASCII bytes; line wrapping is presentational.",
+      "derived_from": [
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/png",
+      "path": "docs/analysis-evidence/generated/cli-terminal.png",
+      "presentation": {
+        "decoded_rgb_sha256": "ceca72ea03151608958cad11f9e3fa84dbe176f9d2b7d3c39262dbc600a4141f",
+        "height": 1120,
+        "mode": "RGB",
+        "width": 1800
+      },
+      "sha256": "8765ae7665eb97a674d6d9adf6e2138d4ed7c3a29d9374456c79b69498735f65"
+    },
+    {
+      "bytes": 10140,
+      "claim": "Complete tight-run stdout rendered from exact captured ASCII bytes; line wrapping is presentational.",
+      "derived_from": [
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/cli-terminal.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "9b0b6db924f17dddd9e1674b57e5ff88fcb7a04ebaada6fef4b2f90b13d69933"
+    },
+    {
+      "bytes": 4211,
+      "claim": "Worst-case lexical binding-predecessor witness and checked equation.",
+      "derived_from": [
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/critical-chain.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "dece6c4146dc919d1e8c6f856b1ab56d4557c74d685e42a104d3812323e59f6b"
+    },
+    {
+      "bytes": 8495,
+      "claim": "Executed best-to-worst slack values on one shared signed scale.",
+      "derived_from": [
+        "robust_fixture",
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/deadline-slack.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "3908d277a20cb61202354a759f8ba04a2e5d781ca688b101ef6277723c9500b5"
+    },
+    {
+      "bytes": 11579,
+      "claim": "Executed best/worst earliest-time envelopes against hard deadlines.",
+      "derived_from": [
+        "robust_fixture",
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "image/svg+xml",
+      "path": "docs/analysis-evidence/generated/feasibility-envelope.svg",
+      "presentation": {
+        "height": 1120,
+        "view_box": "0 0 1800 1120",
+        "width": 1800
+      },
+      "sha256": "99236c4af19ed7887e87b46d67ec8e6204e7cf9ed4ac88c6f72a6eec23c21734"
+    },
+    {
+      "bytes": 0,
+      "claim": "Exact installed-console bytes for the committed duration-sensitive fixture.",
+      "derived_from": [
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "text/plain",
+      "path": "docs/analysis-evidence/raw/duration-sensitive.stderr.txt",
+      "presentation": {},
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2553,
+      "claim": "Exact installed-console bytes for the committed duration-sensitive fixture.",
+      "derived_from": [
+        "duration_sensitive_fixture"
+      ],
+      "media_type": "application/json",
+      "path": "docs/analysis-evidence/raw/duration-sensitive.stdout.json",
+      "presentation": {},
+      "sha256": "5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177"
+    },
+    {
+      "bytes": 0,
+      "claim": "Exact installed-console bytes for the committed robust fixture.",
+      "derived_from": [
+        "robust_fixture"
+      ],
+      "media_type": "text/plain",
+      "path": "docs/analysis-evidence/raw/robust.stderr.txt",
+      "presentation": {},
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2519,
+      "claim": "Exact installed-console bytes for the committed robust fixture.",
+      "derived_from": [
+        "robust_fixture"
+      ],
+      "media_type": "application/json",
+      "path": "docs/analysis-evidence/raw/robust.stdout.json",
+      "presentation": {},
+      "sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+    },
+    {
+      "bytes": 4643,
+      "claim": "Canonical run receipts with symbolic argv, exits, sizes, and hashes.",
+      "derived_from": [
+        "robust_fixture",
+        "duration_sensitive_fixture",
+        "exact_deadline_equality",
+        "minimum_bound_rejection",
+        "reordered_input_invariance"
+      ],
+      "media_type": "application/json",
+      "path": "docs/analysis-evidence/raw/runs.json",
+      "presentation": {},
+      "sha256": "771368e7e1a8060c5fc90a29212c5408878d3b7dcea508edaf4df66069692192"
+    }
+  ],
+  "check_command": ".venv/bin/python tools/generate_analysis_evidence.py --check",
+  "evidence": {
+    "duration_sensitive": {
+      "analysis_digest": "35dfcc56368c12f3a8d4e12a4e715dd1f4fc9cef30a4613c736cdb412bfc0c2e",
+      "minimum_worst_case_slack_seconds": -120,
+      "status": "duration_sensitive",
+      "witness_chain": [
+        "local_shuttle",
+        "security_check"
+      ]
+    },
+    "robust": {
+      "analysis_digest": "7ddafbf24ec6300e127eb15db691d13676bbf9c83e69efc34e75695841b840a2",
+      "minimum_worst_case_slack_seconds": 900,
+      "status": "robust",
+      "witness_chain": [
+        "local_shuttle"
+      ]
+    },
+    "runs": [
+      {
+        "case_id": "robust_fixture",
+        "command": [
+          "tctravel-analyze",
+          "examples/synthetic_connection.v1.json"
+        ],
+        "derivation": null,
+        "exit_code": 0,
+        "input_kind": "committed_fixture",
+        "input_sha256": "725b27c91e2b24d9844434d048d35d07c454970436a26bbf9e30ce1b86bf33fb",
+        "observation": {
+          "analysis_digest": "7ddafbf24ec6300e127eb15db691d13676bbf9c83e69efc34e75695841b840a2",
+          "best_case_minimum_deadline_slack_seconds": 1200,
+          "status": "robust",
+          "worst_case_minimum_deadline_slack_seconds": 900,
+          "worst_case_witness_chain": [
+            "local_shuttle"
+          ]
+        },
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 2519,
+        "stdout_sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+      },
+      {
+        "case_id": "duration_sensitive_fixture",
+        "command": [
+          "tctravel-analyze",
+          "examples/synthetic_tight_connection.v1.json"
+        ],
+        "derivation": null,
+        "exit_code": 1,
+        "input_kind": "committed_fixture",
+        "input_sha256": "8e02c3f8244a83a22a4b48868761ecf4f3316cb55fc161f469df3db42ee31058",
+        "observation": {
+          "analysis_digest": "35dfcc56368c12f3a8d4e12a4e715dd1f4fc9cef30a4613c736cdb412bfc0c2e",
+          "best_case_minimum_deadline_slack_seconds": 300,
+          "status": "duration_sensitive",
+          "worst_case_minimum_deadline_slack_seconds": -120,
+          "worst_case_witness_chain": [
+            "local_shuttle",
+            "security_check"
+          ]
+        },
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 2553,
+        "stdout_sha256": "5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177"
+      },
+      {
+        "case_id": "exact_deadline_equality",
+        "command": [
+          "tctravel-analyze",
+          "<derived:exact-deadline-equality>"
+        ],
+        "derivation": "tight fixture with security_check deadline set to 1620",
+        "exit_code": 0,
+        "input_kind": "derived_probe",
+        "input_sha256": "4d514b4bf2cd4848c603f4fbce1f4f47563b143ee9f421b295111036332543ae",
+        "observation": {
+          "analysis_digest": "3eac0cfbebfda2cf211ccc7c637b7890d0f78e9f26be5701ef5ea137cc4b8f36",
+          "best_case_minimum_deadline_slack_seconds": 300,
+          "status": "robust",
+          "worst_case_minimum_deadline_slack_seconds": 0,
+          "worst_case_witness_chain": [
+            "local_shuttle",
+            "security_check",
+            "gate_walk"
+          ]
+        },
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 2558,
+        "stdout_sha256": "db470033a5cb13a38d6288506bde2f0bedf2ae761a8536b6e6fcf0bf3a9d099b"
+      },
+      {
+        "case_id": "minimum_bound_rejection",
+        "command": [
+          "tctravel-analyze",
+          "<derived:minimum-bound-rejection>"
+        ],
+        "derivation": "robust fixture with local_shuttle deadline set to 599",
+        "exit_code": 3,
+        "input_kind": "derived_probe",
+        "input_sha256": "54250595160bdff594addd4ca093d6e116974c8da9de4db6ed11b94dfbc743ab",
+        "observation": {
+          "error_code": "infeasible_deadline"
+        },
+        "stderr_bytes": 41,
+        "stderr_sha256": "7275d3a389f805e7cff6ac42606e35cf92d9f4bf92355a044097fc097a7a40a4",
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "case_id": "reordered_input_invariance",
+        "command": [
+          "tctravel-analyze",
+          "<derived:reordered-input>"
+        ],
+        "derivation": "robust fixture with reversed arrays and object keys",
+        "exit_code": 0,
+        "input_kind": "derived_probe",
+        "input_sha256": "334a5c12ae7fe0440e3b69510a0dd0f5cf7851cd931508a6e62573e9746f4c70",
+        "observation": {
+          "analysis_digest": "7ddafbf24ec6300e127eb15db691d13676bbf9c83e69efc34e75695841b840a2",
+          "best_case_minimum_deadline_slack_seconds": 1200,
+          "status": "robust",
+          "worst_case_minimum_deadline_slack_seconds": 900,
+          "worst_case_witness_chain": [
+            "local_shuttle"
+          ]
+        },
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 2519,
+        "stdout_sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+      }
+    ]
+  },
+  "install_contract": {
+    "console_script_present": true,
+    "import_within_fresh_venv": true,
+    "module_entry_point_parity": true,
+    "package_index_access": false,
+    "pip_present_in_fresh_venv": false,
+    "site_packages_within_fresh_venv": true,
+    "system_site_packages": false,
+    "user_site_enabled": false,
+    "venv_prefix_distinct": true
+  },
+  "limitations": [
+    "Synthetic fixtures are contract examples, not live travel observations.",
+    "Worst case means only all declared maximum durations, fixed transfer minima, and the deterministic earliest-start policy.",
+    "Duration intervals are bounds, not calibrated probability distributions.",
+    "Digests identify bytes; they do not prove input truth or real-world safety.",
+    "GIF frame timing is editorial and carries no execution-latency claim."
+  ],
+  "pipeline": {
+    "dependency_versions": {
+      "Pillow": "11.3.0",
+      "pip": "26.2",
+      "setuptools": "83.0.0",
+      "wheel": "0.47.0"
+    },
+    "revision": "c7f0b5c1318170b13d5ba74d7fadecf7078371a1",
+    "sources": [
+      {
+        "blob_oid": "6e9a8209992b990bec2c8048cf7ab6ff79d8ecf2",
+        "bytes": 628,
+        "path": "requirements-evidence.txt",
+        "sha256": "147392930ecc8c52b1742af60fcf82d5338a95b6096820ba56bab554f2cc8b9b"
+      },
+      {
+        "blob_oid": "7844aad557476906295c65003754138447294d74",
+        "bytes": 42503,
+        "path": "tests/test_analysis_evidence.py",
+        "sha256": "6e875b96434e268d9867b326b1464fb9ae1f55ec304bb41eb5bff269e8a6e745"
+      },
+      {
+        "blob_oid": "e46fde3efe2cb2cb7338c10c67d03654cccbb704",
+        "bytes": 108825,
+        "path": "tools/generate_analysis_evidence.py",
+        "sha256": "c149ababdaa31c36c706adc8795921d33951d479c343587176de89edf93569a7"
+      }
+    ]
+  },
+  "presentation_models": {
+    "demo": {
+      "frames": [
+        {
+          "accent": "#67e8f9",
+          "case_id": "robust_fixture",
+          "duration_ms": 1200,
+          "heading": "ROBUST FIXTURE",
+          "lines": [
+            "$ tctravel-analyze examples/synthetic_connection.v1.json"
+          ],
+          "phase": "run",
+          "step": "01 / RUN"
+        },
+        {
+          "accent": "#4ade80",
+          "case_id": "robust_fixture",
+          "duration_ms": 2200,
+          "heading": "COMPLETE REPORT \u00b7 EXIT 0",
+          "lines": [
+            "status = robust",
+            "worst-case minimum deadline slack = +900s",
+            "witness chain = local_shuttle",
+            "stdout = 2519 bytes / sha256 bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e"
+          ],
+          "phase": "observe",
+          "step": "02 / OBSERVE"
+        },
+        {
+          "accent": "#67e8f9",
+          "case_id": "duration_sensitive_fixture",
+          "duration_ms": 1200,
+          "heading": "TIGHT FIXTURE",
+          "lines": [
+            "$ tctravel-analyze examples/synthetic_tight_connection.v1.json"
+          ],
+          "phase": "run",
+          "step": "03 / RUN"
+        },
+        {
+          "accent": "#fda4af",
+          "case_id": "duration_sensitive_fixture",
+          "duration_ms": 2800,
+          "heading": "VALID DOMAIN RESULT \u00b7 EXIT 1",
+          "lines": [
+            "status = duration_sensitive",
+            "worst-case minimum deadline slack = -120s",
+            "witness chain = local_shuttle -> security_check",
+            "stdout = 2553 bytes / sha256 5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177",
+            "exit 1 is a classification, not a crash"
+          ],
+          "phase": "observe",
+          "step": "04 / OBSERVE"
+        }
+      ],
+      "loop": 0,
+      "runs": [
+        {
+          "case_id": "robust_fixture",
+          "command": [
+            "tctravel-analyze",
+            "examples/synthetic_connection.v1.json"
+          ],
+          "exit_code": 0,
+          "status": "robust",
+          "stdout_bytes": 2519,
+          "stdout_sha256": "bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e",
+          "witness_chain": [
+            "local_shuttle"
+          ],
+          "worst_slack_seconds": 900
+        },
+        {
+          "case_id": "duration_sensitive_fixture",
+          "command": [
+            "tctravel-analyze",
+            "examples/synthetic_tight_connection.v1.json"
+          ],
+          "exit_code": 1,
+          "status": "duration_sensitive",
+          "stdout_bytes": 2553,
+          "stdout_sha256": "5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177",
+          "witness_chain": [
+            "local_shuttle",
+            "security_check"
+          ],
+          "worst_slack_seconds": -120
+        }
+      ],
+      "timing_semantics": "illustrative"
+    },
+    "terminal": {
+      "case_id": "duration_sensitive_fixture",
+      "chunks": [
+        {
+          "byte_end": 104,
+          "byte_start": 0,
+          "text": "{\"activities\":[{\"activity_id\":\"local_shuttle\",\"best_case\":{\"binding_predecessor_ids\":[],\"deadline_slack_"
+        },
+        {
+          "byte_end": 208,
+          "byte_start": 104,
+          "text": "seconds\":300,\"earliest_finish_offset_seconds\":600,\"earliest_start_offset_seconds\":0,\"release_is_binding\""
+        },
+        {
+          "byte_end": 312,
+          "byte_start": 208,
+          "text": ":true,\"witness_predecessor_id\":null},\"duration_interval_seconds\":{\"maximum\":900,\"minimum\":600},\"hard_dea"
+        },
+        {
+          "byte_end": 416,
+          "byte_start": 312,
+          "text": "dline_offset_seconds\":900,\"release_offset_seconds\":0,\"status\":\"robust\",\"worst_case\":{\"binding_predecesso"
+        },
+        {
+          "byte_end": 520,
+          "byte_start": 416,
+          "text": "r_ids\":[],\"deadline_slack_seconds\":0,\"earliest_finish_offset_seconds\":900,\"earliest_start_offset_seconds"
+        },
+        {
+          "byte_end": 624,
+          "byte_start": 520,
+          "text": "\":0,\"release_is_binding\":true,\"witness_predecessor_id\":null}},{\"activity_id\":\"security_check\",\"best_case"
+        },
+        {
+          "byte_end": 728,
+          "byte_start": 624,
+          "text": "\":{\"binding_predecessor_ids\":[\"local_shuttle\"],\"deadline_slack_seconds\":480,\"earliest_finish_offset_seco"
+        },
+        {
+          "byte_end": 832,
+          "byte_start": 728,
+          "text": "nds\":1020,\"earliest_start_offset_seconds\":720,\"release_is_binding\":false,\"witness_predecessor_id\":\"local"
+        },
+        {
+          "byte_end": 936,
+          "byte_start": 832,
+          "text": "_shuttle\"},\"duration_interval_seconds\":{\"maximum\":600,\"minimum\":300},\"hard_deadline_offset_seconds\":1500"
+        },
+        {
+          "byte_end": 1040,
+          "byte_start": 936,
+          "text": ",\"release_offset_seconds\":0,\"status\":\"duration_sensitive\",\"worst_case\":{\"binding_predecessor_ids\":[\"loca"
+        },
+        {
+          "byte_end": 1144,
+          "byte_start": 1040,
+          "text": "l_shuttle\"],\"deadline_slack_seconds\":-120,\"earliest_finish_offset_seconds\":1620,\"earliest_start_offset_s"
+        },
+        {
+          "byte_end": 1248,
+          "byte_start": 1144,
+          "text": "econds\":1020,\"release_is_binding\":false,\"witness_predecessor_id\":\"local_shuttle\"}},{\"activity_id\":\"gate_"
+        },
+        {
+          "byte_end": 1352,
+          "byte_start": 1248,
+          "text": "walk\",\"best_case\":{\"binding_predecessor_ids\":[\"security_check\"],\"deadline_slack_seconds\":720,\"earliest_f"
+        },
+        {
+          "byte_end": 1456,
+          "byte_start": 1352,
+          "text": "inish_offset_seconds\":1320,\"earliest_start_offset_seconds\":1080,\"release_is_binding\":false,\"witness_pred"
+        },
+        {
+          "byte_end": 1560,
+          "byte_start": 1456,
+          "text": "ecessor_id\":\"security_check\"},\"duration_interval_seconds\":{\"maximum\":360,\"minimum\":240},\"hard_deadline_o"
+        },
+        {
+          "byte_end": 1664,
+          "byte_start": 1560,
+          "text": "ffset_seconds\":2040,\"release_offset_seconds\":0,\"status\":\"robust\",\"worst_case\":{\"binding_predecessor_ids\""
+        },
+        {
+          "byte_end": 1768,
+          "byte_start": 1664,
+          "text": ":[\"security_check\"],\"deadline_slack_seconds\":0,\"earliest_finish_offset_seconds\":2040,\"earliest_start_off"
+        },
+        {
+          "byte_end": 1872,
+          "byte_start": 1768,
+          "text": "set_seconds\":1680,\"release_is_binding\":false,\"witness_predecessor_id\":\"security_check\"}}],\"analysis_sche"
+        },
+        {
+          "byte_end": 1976,
+          "byte_start": 1872,
+          "text": "ma_version\":1,\"anchor_time_utc\":\"2026-08-01T08:00:00Z\",\"best_case\":{\"critical_activity_ids\":[\"local_shut"
+        },
+        {
+          "byte_end": 2080,
+          "byte_start": 1976,
+          "text": "tle\"],\"minimum_deadline_slack_seconds\":300,\"witness_activity_id\":\"local_shuttle\",\"witness_chain\":[\"local"
+        },
+        {
+          "byte_end": 2184,
+          "byte_start": 2080,
+          "text": "_shuttle\"]},\"contract_schema_version\":1,\"graph_digest\":\"48f8e8f7993bf47e17780ce102626c27f6924d26ac539256"
+        },
+        {
+          "byte_end": 2288,
+          "byte_start": 2184,
+          "text": "6bda353d0ce9f160\",\"graph_schema_version\":1,\"horizon_seconds\":7200,\"itinerary_digest\":\"fa1969afb0cbaf3460"
+        },
+        {
+          "byte_end": 2392,
+          "byte_start": 2288,
+          "text": "94fd9dfeb599bd8f03359c6bdbf97e3cb8a26dc23e2600\",\"status\":\"duration_sensitive\",\"worst_case\":{\"critical_ac"
+        },
+        {
+          "byte_end": 2496,
+          "byte_start": 2392,
+          "text": "tivity_ids\":[\"security_check\"],\"minimum_deadline_slack_seconds\":-120,\"witness_activity_id\":\"security_che"
+        },
+        {
+          "byte_end": 2552,
+          "byte_start": 2496,
+          "text": "ck\",\"witness_chain\":[\"local_shuttle\",\"security_check\"]}}"
+        }
+      ],
+      "command": [
+        "tctravel-analyze",
+        "examples/synthetic_tight_connection.v1.json"
+      ],
+      "exit_code": 1,
+      "status": "duration_sensitive",
+      "stderr_bytes": 0,
+      "stdout_bytes": 2553,
+      "stdout_sha256": "5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177",
+      "terminal_columns": 104,
+      "trailing_newline": "LF"
+    }
+  },
+  "renderer_contract": {
+    "locked_pillow_wheel_sha256": "676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024",
+    "pillow_distribution_file_count": 138,
+    "pillow_distribution_tree_sha256": "29b0317118fa9818057672db906c77925017ee8ae4a3a5f0ffd015a0fd59eca0",
+    "pillow_module_within_distribution": true,
+    "pillow_version": "11.3.0",
+    "pillow_zlib_version": "1.3",
+    "platform_machine": "x86_64",
+    "platform_system": "Linux",
+    "platform_tag": "linux-x86_64",
+    "python_abi": "cpython-312-x86_64-linux-gnu",
+    "python_implementation": "CPython",
+    "python_version": "3.12.3",
+    "python_zlib_build_version": "1.3",
+    "python_zlib_runtime_version": "1.3"
+  },
+  "runtime_contract": {
+    "analysis_output_cap_bytes": 1048576,
+    "base_prefix_distinct": true,
+    "distribution_version": "0.3.0",
+    "import_within_venv": true,
+    "max_activities": 128,
+    "max_horizon_seconds": 2678400,
+    "max_input_bytes": 65536,
+    "max_json_depth": 24,
+    "max_transfers": 512,
+    "pip_present": false,
+    "site_packages_within_venv": true,
+    "system_site_packages": false,
+    "user_site_enabled": false
+  },
+  "schema_version": 1,
+  "subject": {
+    "revision": "7e9951e65941d05c6b757b1c2ade4f30af6cd9f8",
+    "sources": [
+      {
+        "blob_oid": "2da6fd41c5fbdbb999e8ca7982f05c52cf9db3df",
+        "bytes": 1065,
+        "path": "examples/synthetic_connection.v1.json",
+        "sha256": "725b27c91e2b24d9844434d048d35d07c454970436a26bbf9e30ce1b86bf33fb"
+      },
+      {
+        "blob_oid": "56f5800e1e21c23dce3e8554fba36ccc18d2cd18",
+        "bytes": 1070,
+        "path": "examples/synthetic_tight_connection.v1.json",
+        "sha256": "8e02c3f8244a83a22a4b48868761ecf4f3316cb55fc161f469df3db42ee31058"
+      },
+      {
+        "blob_oid": "e9de4f730df6c67b433a4d9f71c4cb99eca9d606",
+        "bytes": 457,
+        "path": "pyproject.toml",
+        "sha256": "85bc88c17521132dc6945479de3a7a3b07488637239a025a7c9c8febc340aba5"
+      },
+      {
+        "blob_oid": "abe104763feb47624d82f1bf4c7051a0826125bf",
+        "bytes": 1076,
+        "path": "tctravel/__init__.py",
+        "sha256": "fb7a44d8e585e37c2a7b71753daf2535726b63fd9c1d269737d9f34936fa54dc"
+      },
+      {
+        "blob_oid": "6c44dc6db40499a676cadf4dbd3304e339e623f2",
+        "bytes": 148,
+        "path": "tctravel/__main__.py",
+        "sha256": "c3ad9949fe21ea757f7f7f1d06677ed5551bd0ac5285f55c0ed041d1ecf769df"
+      },
+      {
+        "blob_oid": "deea24ad1806223a1cbf5fc00b9fe438f2616475",
+        "bytes": 11208,
+        "path": "tctravel/analysis.py",
+        "sha256": "9cd803c0c6662e1a5cbca82afde5be9abba087f677f4c5b7d2e088e2f2b2110e"
+      },
+      {
+        "blob_oid": "c9d6e8a068c494686c9e9d3e71a719797a6c615e",
+        "bytes": 7193,
+        "path": "tctravel/cli.py",
+        "sha256": "f99e69a10f8a1b9734c231e0afafc477e7ea11b78414b0db329a7878d0da3f16"
+      },
+      {
+        "blob_oid": "a2ff80fd0ff42630369492812c578e85d29afb22",
+        "bytes": 9464,
+        "path": "tctravel/codec.py",
+        "sha256": "cd50cb292fe84a91a9274ce810d1aa2111b1c47b584aa808e284dc2a7331a193"
+      },
+      {
+        "blob_oid": "9a66215f897acedb21ab8bf84f75eb06bd4c2eb2",
+        "bytes": 6449,
+        "path": "tctravel/compiler.py",
+        "sha256": "cff73deffd7a128a43f469d063e368dfbfffe7285401e95fadee45e00ca72291"
+      },
+      {
+        "blob_oid": "2f7e0b6c3244dc39e6d96c53d335196a4392e828",
+        "bytes": 1629,
+        "path": "tctravel/errors.py",
+        "sha256": "3d476c7d4c93bfd627ca6ca9952f24a4236ac2ba4b41a0c90feb75d5eae12df3"
+      },
+      {
+        "blob_oid": "7ee1d51ea42ed0cfd70d8da28de3acfb3e62e0b9",
+        "bytes": 1082,
+        "path": "tctravel/model.py",
+        "sha256": "0f5aa6dd69cfc7366f047adffef121b058818623b9fa76ea7c2a9647ac6b3186"
+      },
+      {
+        "blob_oid": "8f5ea9641205a58c21ec3b58f3e295d90d1f6c4c",
+        "bytes": 7139,
+        "path": "tctravel/validation.py",
+        "sha256": "e6725b06110cc12fa0125077ead5d2008113340cce28c07f8752a2cc915e0f61"
+      }
+    ],
+    "tree": "381c6ed9bb7c6e2dc155a1b111cb6bca3d683476",
+    "wheel_contract": {
+      "distribution": "tctravel-temporal-compiler",
+      "entry_point": "tctravel-analyze = tctravel.cli:main",
+      "metadata_sha256": "65f87cd1bdd03401fb593e90ce17b4e072ae8cc4fc97dd856b476d385edc297b",
+      "package_files": [
+        {
+          "bytes": 1076,
+          "path": "tctravel/__init__.py",
+          "sha256": "fb7a44d8e585e37c2a7b71753daf2535726b63fd9c1d269737d9f34936fa54dc"
+        },
+        {
+          "bytes": 148,
+          "path": "tctravel/__main__.py",
+          "sha256": "c3ad9949fe21ea757f7f7f1d06677ed5551bd0ac5285f55c0ed041d1ecf769df"
+        },
+        {
+          "bytes": 11208,
+          "path": "tctravel/analysis.py",
+          "sha256": "9cd803c0c6662e1a5cbca82afde5be9abba087f677f4c5b7d2e088e2f2b2110e"
+        },
+        {
+          "bytes": 7193,
+          "path": "tctravel/cli.py",
+          "sha256": "f99e69a10f8a1b9734c231e0afafc477e7ea11b78414b0db329a7878d0da3f16"
+        },
+        {
+          "bytes": 9464,
+          "path": "tctravel/codec.py",
+          "sha256": "cd50cb292fe84a91a9274ce810d1aa2111b1c47b584aa808e284dc2a7331a193"
+        },
+        {
+          "bytes": 6449,
+          "path": "tctravel/compiler.py",
+          "sha256": "cff73deffd7a128a43f469d063e368dfbfffe7285401e95fadee45e00ca72291"
+        },
+        {
+          "bytes": 1629,
+          "path": "tctravel/errors.py",
+          "sha256": "3d476c7d4c93bfd627ca6ca9952f24a4236ac2ba4b41a0c90feb75d5eae12df3"
+        },
+        {
+          "bytes": 1082,
+          "path": "tctravel/model.py",
+          "sha256": "0f5aa6dd69cfc7366f047adffef121b058818623b9fa76ea7c2a9647ac6b3186"
+        },
+        {
+          "bytes": 7139,
+          "path": "tctravel/validation.py",
+          "sha256": "e6725b06110cc12fa0125077ead5d2008113340cce28c07f8752a2cc915e0f61"
+        }
+      ],
+      "version": "0.3.0",
+      "wheel_files": [
+        {
+          "bytes": 1076,
+          "path": "tctravel/__init__.py",
+          "sha256": "fb7a44d8e585e37c2a7b71753daf2535726b63fd9c1d269737d9f34936fa54dc"
+        },
+        {
+          "bytes": 148,
+          "path": "tctravel/__main__.py",
+          "sha256": "c3ad9949fe21ea757f7f7f1d06677ed5551bd0ac5285f55c0ed041d1ecf769df"
+        },
+        {
+          "bytes": 11208,
+          "path": "tctravel/analysis.py",
+          "sha256": "9cd803c0c6662e1a5cbca82afde5be9abba087f677f4c5b7d2e088e2f2b2110e"
+        },
+        {
+          "bytes": 7193,
+          "path": "tctravel/cli.py",
+          "sha256": "f99e69a10f8a1b9734c231e0afafc477e7ea11b78414b0db329a7878d0da3f16"
+        },
+        {
+          "bytes": 9464,
+          "path": "tctravel/codec.py",
+          "sha256": "cd50cb292fe84a91a9274ce810d1aa2111b1c47b584aa808e284dc2a7331a193"
+        },
+        {
+          "bytes": 6449,
+          "path": "tctravel/compiler.py",
+          "sha256": "cff73deffd7a128a43f469d063e368dfbfffe7285401e95fadee45e00ca72291"
+        },
+        {
+          "bytes": 1629,
+          "path": "tctravel/errors.py",
+          "sha256": "3d476c7d4c93bfd627ca6ca9952f24a4236ac2ba4b41a0c90feb75d5eae12df3"
+        },
+        {
+          "bytes": 1082,
+          "path": "tctravel/model.py",
+          "sha256": "0f5aa6dd69cfc7366f047adffef121b058818623b9fa76ea7c2a9647ac6b3186"
+        },
+        {
+          "bytes": 7139,
+          "path": "tctravel/validation.py",
+          "sha256": "e6725b06110cc12fa0125077ead5d2008113340cce28c07f8752a2cc915e0f61"
+        },
+        {
+          "bytes": 167,
+          "path": "tctravel_temporal_compiler-0.3.0.dist-info/METADATA",
+          "sha256": "65f87cd1bdd03401fb593e90ce17b4e072ae8cc4fc97dd856b476d385edc297b"
+        },
+        {
+          "bytes": 1168,
+          "path": "tctravel_temporal_compiler-0.3.0.dist-info/RECORD",
+          "sha256": "a353420a2329790e690fb8cf296460c9c1d80ab4717e964bf40617a5b8f93b91"
+        },
+        {
+          "bytes": 91,
+          "path": "tctravel_temporal_compiler-0.3.0.dist-info/WHEEL",
+          "sha256": "2b6eb4118ce7cd7b09601406aa623c553c4476265836f0d9c16f5c061f7efcc0"
+        },
+        {
+          "bytes": 55,
+          "path": "tctravel_temporal_compiler-0.3.0.dist-info/entry_points.txt",
+          "sha256": "020d54ff8a07e90e48c07846bec7a07879e2280e31c4ee9ce4fb18e46eba7e12"
+        },
+        {
+          "bytes": 9,
+          "path": "tctravel_temporal_compiler-0.3.0.dist-info/top_level.txt",
+          "sha256": "9ed08c36eac3c5491383cea52a6749f7a5d35241683256ad8ae35b01587677f9"
+        }
+      ]
+    }
+  },
+  "write_command": ".venv/bin/python tools/generate_analysis_evidence.py --write"
+}

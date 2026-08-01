@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="decision-title decision-desc" data-case-count="5">
+  <title id="decision-title">Executed analysis decision matrix</title>
+  <desc id="decision-desc">Five installed-CLI runs observe robust, duration-sensitive, exact deadline equality, minimum-bound rejection, and reorder invariance.</desc>
+  <rect width="1800" height="1120" fill="#f8fafc"/>
+  <rect x="32" y="28" width="1736" height="136" rx="26" fill="#0f172a"/>
+  <text x="76" y="84" fill="#f8fafc" font-size="34" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Executed analysis decision matrix</text>
+  <text x="76" y="124" fill="#cbd5e1" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif">installed console script · exact exits · canonical output/error digests</text>
+  <rect x="48" y="198" width="1704" height="820" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="82" y="248" fill="#64748b" font-size="13" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">CASE</text>
+  <text x="660" y="248" fill="#64748b" font-size="13" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">EXIT</text>
+  <text x="790" y="248" fill="#64748b" font-size="13" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">OBSERVED CONTRACT</text>
+  <text x="1270" y="248" fill="#64748b" font-size="13" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">OUTPUT IDENTITY</text>
+  <g data-case-id="robust_fixture" data-exit-code="0" data-observation="robust" data-stdout-sha256="bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e" data-stderr-sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+    <rect x="68" y="278" width="1664" height="112" rx="16" fill="#f8fafc"/>
+    <text x="92" y="321" fill="#0f172a" font-size="17" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Committed robust fixture</text>
+    <text x="92" y="354" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust_fixture</text>
+    <rect x="640" y="307" width="82" height="46" rx="18" fill="#0f172a"/>
+    <text x="681" y="338" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900" font-family="SFMono-Regular, Consolas, monospace">0</text>
+    <text x="790" y="323" fill="#0f172a" font-size="16" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <text x="790" y="354" fill="#64748b" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">worst slack +900s</text>
+    <text x="1270" y="336" fill="#334155" font-size="13" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">analysis 7ddafbf24ec6300e127eb15d…</text>
+  </g>
+  <g data-case-id="duration_sensitive_fixture" data-exit-code="1" data-observation="duration_sensitive" data-stdout-sha256="5ac11f4bef8632c85ca5190ef37b96f920ca4f0cdb26517f36dac0355d551177" data-stderr-sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+    <rect x="68" y="415" width="1664" height="112" rx="16" fill="#f1f5f9"/>
+    <text x="92" y="458" fill="#0f172a" font-size="17" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Committed tight fixture</text>
+    <text x="92" y="491" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">duration_sensitive_fixture</text>
+    <rect x="640" y="444" width="82" height="46" rx="18" fill="#0f172a"/>
+    <text x="681" y="475" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900" font-family="SFMono-Regular, Consolas, monospace">1</text>
+    <text x="790" y="460" fill="#0f172a" font-size="16" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">duration_sensitive</text>
+    <text x="790" y="491" fill="#64748b" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">worst slack -120s</text>
+    <text x="1270" y="473" fill="#334155" font-size="13" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">analysis 35dfcc56368c12f3a8d4e12a…</text>
+  </g>
+  <g data-case-id="exact_deadline_equality" data-exit-code="0" data-observation="robust" data-stdout-sha256="db470033a5cb13a38d6288506bde2f0bedf2ae761a8536b6e6fcf0bf3a9d099b" data-stderr-sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+    <rect x="68" y="552" width="1664" height="112" rx="16" fill="#f8fafc"/>
+    <text x="92" y="595" fill="#0f172a" font-size="17" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Exact deadline equality</text>
+    <text x="92" y="628" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">exact_deadline_equality</text>
+    <rect x="640" y="581" width="82" height="46" rx="18" fill="#0f172a"/>
+    <text x="681" y="612" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900" font-family="SFMono-Regular, Consolas, monospace">0</text>
+    <text x="790" y="597" fill="#0f172a" font-size="16" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <text x="790" y="628" fill="#64748b" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">worst slack +0s</text>
+    <text x="1270" y="610" fill="#334155" font-size="13" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">analysis 3eac0cfbebfda2cf211ccc7c…</text>
+  </g>
+  <g data-case-id="minimum_bound_rejection" data-exit-code="3" data-observation="infeasible_deadline" data-stdout-sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" data-stderr-sha256="7275d3a389f805e7cff6ac42606e35cf92d9f4bf92355a044097fc097a7a40a4">
+    <rect x="68" y="689" width="1664" height="112" rx="16" fill="#f1f5f9"/>
+    <text x="92" y="732" fill="#0f172a" font-size="17" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Minimum-bound rejection</text>
+    <text x="92" y="765" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">minimum_bound_rejection</text>
+    <rect x="640" y="718" width="82" height="46" rx="18" fill="#0f172a"/>
+    <text x="681" y="749" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900" font-family="SFMono-Regular, Consolas, monospace">3</text>
+    <text x="790" y="734" fill="#0f172a" font-size="16" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">infeasible_deadline</text>
+    <text x="790" y="765" fill="#64748b" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">fail-closed before analysis</text>
+    <text x="1270" y="747" fill="#334155" font-size="13" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">stderr 7275d3a389f805e7cff6ac42…</text>
+  </g>
+  <g data-case-id="reordered_input_invariance" data-exit-code="0" data-observation="robust" data-stdout-sha256="bcb022a5b7646f6e382db6e79a3f53424d41622c3c5356f3979904e76280fd2e" data-stderr-sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+    <rect x="68" y="826" width="1664" height="112" rx="16" fill="#f8fafc"/>
+    <text x="92" y="869" fill="#0f172a" font-size="17" font-weight="800" font-family="Inter, Segoe UI, Arial, sans-serif">Reordered-input invariance</text>
+    <text x="92" y="902" fill="#64748b" font-size="12" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">reordered_input_invariance</text>
+    <rect x="640" y="855" width="82" height="46" rx="18" fill="#0f172a"/>
+    <text x="681" y="886" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="900" font-family="SFMono-Regular, Consolas, monospace">0</text>
+    <text x="790" y="871" fill="#0f172a" font-size="16" font-weight="800" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">robust</text>
+    <text x="790" y="902" fill="#64748b" font-size="13" font-family="Inter, Segoe UI, Arial, sans-serif">worst slack +900s</text>
+    <text x="1270" y="884" fill="#334155" font-size="13" font-family="SFMono-Regular, Consolas, Liberation Mono, monospace">analysis 7ddafbf24ec6300e127eb15d…</text>
+  </g>
+  <text x="82" y="988" fill="#475569" font-size="14" font-family="Inter, Segoe UI, Arial, sans-serif">Exit 1 is a valid duration-sensitive classification with a complete report; exit 3 is the synthetic minimum-bound rejection.</text>
+</svg>
