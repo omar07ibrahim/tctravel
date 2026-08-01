@@ -122,10 +122,10 @@ EXPECTED_TERMINAL_DECODED_RGB_SHA256: Final = (
     "ceca72ea03151608958cad11f9e3fa84dbe176f9d2b7d3c39262dbc600a4141f"
 )
 EXPECTED_DEMO_DECODED_RGB_FRAME_SHA256: Final = (
-    "6ad1ae94c96e1b74ae76dbdcd564ea91ac0e5a14292b620129070a782c025fe9",
-    "0d676f17654abb0f3dbdeaf408f98abb0ec2ad16e9b0ef7b287f42a8cb0a6da5",
-    "b8f9126f41fe41a5a5c32da96ff9dc135b7d83a9cb8bff910031555f42f3d0d8",
-    "6455a6a360be89516e57652fc8243f69d8c468aae3a82ea61cf33e21774e56fc",
+    "8d3ab2b69f7507be82b334d4863e847d691fc7d32695dcccbecc50f1912a7191",
+    "118e49b354f5d6063f3d494c46cb910269c39eea94a7a6a535e9e16528c1e7b4",
+    "b9c8c5da2d28981fbd2b1f1bf253ab2a52310c21e76babc4af8a77e0e326ee82",
+    "6b78d81f0ca2e48643a9d486a4b648b9ae1a24f2c80b37735c4f295a6e2c3248",
 )
 EXPECTED_WHEEL_METADATA: Final = (
     b"Metadata-Version: 2.4\n"
@@ -2437,7 +2437,7 @@ def _draw_demo_frame(
     )
     draw.rectangle((12, 12, 888, 76), fill="#0f172a")
     draw.text((34, 32), frame.step, font=font, fill=frame.accent)
-    draw.text((130, 32), frame.heading, font=font, fill="#f8fafc")
+    draw.text((180, 32), frame.heading, font=font, fill="#f8fafc")
     y = 112
     for line in _demo_frame_lines(frame, run):
         for wrapped in textwrap.wrap(line, width=102) or [""]:
