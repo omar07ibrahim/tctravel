@@ -24,7 +24,6 @@ from tctravel import (
 )
 from tools import generate_visuals
 
-
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "examples" / "synthetic_connection.v1.json"
 MANIFEST = ROOT / generate_visuals.MANIFEST_OUTPUT
@@ -69,27 +68,27 @@ class VisualEvidenceTests(unittest.TestCase):
             for key, original_value in original.items():
                 if type(original_value) is dict:
                     assert_nested_objects_reversed(
-                        original_value,
+                        cast(dict[str, object], original_value),
                         cast(dict[str, object], mutated[key]),
                     )
 
-        baseline = json.loads(FIXTURE.read_bytes())
+        baseline = cast(dict[str, object], json.loads(FIXTURE.read_bytes()))
         reordered_case = next(
             case
-            for case in generate_visuals._boundary_cases(
+            for case in generate_visuals._boundary_cases(  # pyright: ignore[reportPrivateUsage]
                 FIXTURE.read_bytes()
             )
             if case.case_id == "accepted_reordered"
         )
-        reordered = json.loads(reordered_case.payload)
+        reordered = cast(dict[str, object], json.loads(reordered_case.payload))
 
         self.assertEqual(
             list(reordered),
             list(reversed(tuple(baseline))),
         )
         for collection in ("activities", "transfers"):
-            baseline_items = baseline[collection]
-            reordered_items = reordered[collection]
+            baseline_items = cast(list[dict[str, object]], baseline[collection])
+            reordered_items = cast(list[dict[str, object]], reordered[collection])
             self.assertEqual(
                 reordered_items,
                 list(reversed(baseline_items)),
@@ -134,8 +133,7 @@ class VisualEvidenceTests(unittest.TestCase):
         self.assertEqual(completed.stderr, "")
         self.assertEqual(
             completed.stdout,
-            "TCTravel visual evidence: PASS "
-            "(verified 2 SVGs + manifest)\n",
+            "TCTravel visual evidence: PASS (verified 2 SVGs + manifest)\n",
         )
         self.assertEqual(
             tracked_before,
@@ -148,11 +146,16 @@ class VisualEvidenceTests(unittest.TestCase):
             },
         )
 
-    def test_readme_and_evidence_note_embed_real_artifacts(self) -> None:
+    def test_documentation_embeds_real_reproducible_artifacts(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         evidence_note = (ROOT / "docs" / "visual-evidence.md").read_text(
             encoding="utf-8"
         )
+        analysis_note = (ROOT / "docs" / "analysis-evidence.md").read_text(
+            encoding="utf-8"
+        )
+        analysis_manifest_path = ROOT / "docs" / "analysis-evidence" / "manifest.json"
+        analysis_manifest = json.loads(analysis_manifest_path.read_bytes())
         self.assertIn(generate_visuals.CHECK_COMMAND, readme)
         self.assertIn(generate_visuals.CHECK_COMMAND, evidence_note)
         for relative_path in SVG_PATHS:
@@ -160,6 +163,22 @@ class VisualEvidenceTests(unittest.TestCase):
             self.assertIn(Path(relative_path).name, evidence_note)
         self.assertIn(generate_visuals.MANIFEST_OUTPUT, readme)
         self.assertIn("visuals/manifest.json", evidence_note)
+        self.assertIn(analysis_manifest["check_command"], readme)
+        self.assertIn(analysis_manifest["check_command"], analysis_note)
+        self.assertIn("analysis-evidence/manifest.json", analysis_note)
+
+        visual_paths = [
+            record["path"]
+            for record in analysis_manifest["artifacts"]
+            if record["media_type"].startswith("image/")
+        ]
+        self.assertEqual(len(visual_paths), 8)
+        for relative_path in visual_paths:
+            self.assertIn(relative_path, readme)
+            self.assertIn(
+                relative_path.removeprefix("docs/"),
+                analysis_note,
+            )
 
     def test_manifest_binds_exact_sources_outputs_and_public_evidence(
         self,
@@ -219,9 +238,7 @@ class VisualEvidenceTests(unittest.TestCase):
             [code.value for code in ErrorCode],
         )
 
-        graph = compile_temporal_graph(
-            decode_itinerary_json(FIXTURE.read_bytes())
-        )
+        graph = compile_temporal_graph(decode_itinerary_json(FIXTURE.read_bytes()))
         compiled = evidence["compiled_graph"]
         self.assertEqual(compiled["graph_sha256"], graph_digest(graph))
         self.assertEqual(compiled["itinerary_sha256"], graph.itinerary_digest)
@@ -244,9 +261,9 @@ class VisualEvidenceTests(unittest.TestCase):
     def test_generator_calls_public_package_api_without_private_imports(
         self,
     ) -> None:
-        generator_source = (
-            ROOT / "tools" / "generate_visuals.py"
-        ).read_text(encoding="utf-8")
+        generator_source = (ROOT / "tools" / "generate_visuals.py").read_text(
+            encoding="utf-8"
+        )
         tree = ast.parse(generator_source)
         tctravel_imports = [
             node.module
@@ -274,12 +291,8 @@ class VisualEvidenceTests(unittest.TestCase):
         self.assertGreaterEqual(compiler.call_count, 4)
 
     def test_graph_svg_carries_every_observed_public_edge(self) -> None:
-        graph = compile_temporal_graph(
-            decode_itinerary_json(FIXTURE.read_bytes())
-        )
-        root = ET.fromstring(
-            (ROOT / generate_visuals.GRAPH_OUTPUT).read_bytes()
-        )
+        graph = compile_temporal_graph(decode_itinerary_json(FIXTURE.read_bytes()))
+        root = ET.fromstring((ROOT / generate_visuals.GRAPH_OUTPUT).read_bytes())
         self.assertEqual(
             root.attrib["data-itinerary-sha256"],
             graph.itinerary_digest,
@@ -289,7 +302,7 @@ class VisualEvidenceTests(unittest.TestCase):
             graph_digest(graph),
         )
 
-        observed_edges = []
+        observed_edges: list[tuple[str, str, str, int | None, int | None]] = []
         for element in root.iter():
             if "data-edge-kind" not in element.attrib:
                 continue
@@ -330,19 +343,17 @@ class VisualEvidenceTests(unittest.TestCase):
         observations = generate_visuals.collect_boundary_observations(
             FIXTURE.read_bytes()
         )
-        root = ET.fromstring(
-            (ROOT / generate_visuals.BOUNDARY_OUTPUT).read_bytes()
-        )
+        root = ET.fromstring((ROOT / generate_visuals.BOUNDARY_OUTPUT).read_bytes())
 
-        rendered_cases = {}
-        rendered_limits = {}
+        rendered_cases: dict[str, dict[str, str]] = {}
+        rendered_limits: dict[str, int] = {}
         for element in root.iter():
             if "data-case-id" in element.attrib:
                 rendered_cases[element.attrib["data-case-id"]] = element.attrib
             if "data-public-constant" in element.attrib:
-                rendered_limits[
-                    element.attrib["data-public-constant"]
-                ] = int(element.attrib["data-value"])
+                rendered_limits[element.attrib["data-public-constant"]] = int(
+                    element.attrib["data-value"]
+                )
 
         self.assertEqual(
             set(rendered_cases),
@@ -374,9 +385,7 @@ class VisualEvidenceTests(unittest.TestCase):
 
     def test_svgs_are_accessible_fixed_canvas_and_self_contained(self) -> None:
         expected_viewboxes = {
-            generate_visuals.BOUNDARY_OUTPUT: (
-                generate_visuals.BOUNDARY_VIEWBOX
-            ),
+            generate_visuals.BOUNDARY_OUTPUT: (generate_visuals.BOUNDARY_VIEWBOX),
             generate_visuals.GRAPH_OUTPUT: generate_visuals.GRAPH_VIEWBOX,
         }
         forbidden_elements = {"a", "foreignObject", "image", "script"}
@@ -441,9 +450,7 @@ class VisualEvidenceTests(unittest.TestCase):
                 for token in forbidden_tokens:
                     self.assertNotIn(token, text)
 
-        graph_text = (ROOT / generate_visuals.GRAPH_OUTPUT).read_text(
-            encoding="utf-8"
-        )
+        graph_text = (ROOT / generate_visuals.GRAPH_OUTPUT).read_text(encoding="utf-8")
         boundary_text = (ROOT / generate_visuals.BOUNDARY_OUTPUT).read_text(
             encoding="utf-8"
         )
