@@ -1432,6 +1432,9 @@ def _envelope_svg(captures: CaptureSet) -> bytes:
         ("ROBUST FIXTURE", _require_report(robust), "#0369a1"),
         ("DURATION-SENSITIVE FIXTURE", _require_report(tight), "#be123c"),
     )
+    axis_x = 350
+    axis_width = 1360
+    value_label_x = 1670
     lines = _svg_open(
         title_id="envelope-title",
         description_id="envelope-desc",
@@ -1440,7 +1443,11 @@ def _envelope_svg(captures: CaptureSet) -> bytes:
             "Best and worst earliest start-finish bars from the installed CLI, "
             "with exact hard-deadline markers for both committed fixtures."
         ),
-        attributes={"subject-revision": captures.subject_revision},
+        attributes={
+            "axis-end-x": axis_x + axis_width,
+            "subject-revision": captures.subject_revision,
+            "value-label-x": value_label_x,
+        },
     )
     _svg_header(
         lines,
@@ -1456,8 +1463,6 @@ def _envelope_svg(captures: CaptureSet) -> bytes:
             cast(int, activity["hard_deadline_offset_seconds"])
             for activity in activities
         )
-        axis_x = 350
-        axis_width = 1360
         scale = axis_width / axis_max
         status = cast(str, report["status"])
         slack = cast(int, report["worst_case"]["minimum_deadline_slack_seconds"])
@@ -1555,13 +1560,15 @@ def _envelope_svg(captures: CaptureSet) -> bytes:
                         'stroke="#b91c1c" stroke-width="3"/>'
                     ),
                     (
-                        f'      <text x="1718" y="{row_y + 19}" text-anchor="end" '
+                        f'      <text x="{value_label_x}" y="{row_y + 19}" '
+                        'text-anchor="end" '
                         'fill="#0369a1" font-size="12" font-family="SFMono-Regular, '
                         f'Consolas, Liberation Mono, monospace">best {best_start}→'
                         f"{best_finish}s</text>"
                     ),
                     (
-                        f'      <text x="1718" y="{row_y + 48}" text-anchor="end" '
+                        f'      <text x="{value_label_x}" y="{row_y + 48}" '
+                        'text-anchor="end" '
                         f'fill="{"#be123c" if breach else "#166534"}" font-size="12" '
                         'font-family="SFMono-Regular, Consolas, Liberation Mono, '
                         f'monospace">worst {worst_start}→{worst_finish}s · '
@@ -1610,7 +1617,8 @@ def _slack_svg(captures: CaptureSet) -> bytes:
     lower = min(-300, (min(values) // 300) * 300)
     upper = max(300, ((max(values) + 299) // 300) * 300)
     axis_x = 420
-    axis_width = 1270
+    axis_width = 1000
+    value_label_x = 1712
     scale = axis_width / (upper - lower)
     zero_x = axis_x + (0 - lower) * scale
     lines = _svg_open(
@@ -1621,7 +1629,13 @@ def _slack_svg(captures: CaptureSet) -> bytes:
             "Best and worst deadline slack share one signed scale. Direct labels "
             "show the exact values observed in installed CLI reports."
         ),
-        attributes={"scale-min": lower, "scale-max": upper, "zero-x": f"{zero_x:.1f}"},
+        attributes={
+            "axis-end-x": axis_x + axis_width,
+            "scale-min": lower,
+            "scale-max": upper,
+            "value-label-x": value_label_x,
+            "zero-x": f"{zero_x:.1f}",
+        },
     )
     _svg_header(
         lines,
@@ -1701,7 +1715,8 @@ def _slack_svg(captures: CaptureSet) -> bytes:
                         'stroke-width="3"/>'
                     ),
                     (
-                        f'    <text x="1712" y="{y + 5}" text-anchor="end" '
+                        f'    <text x="{value_label_x}" y="{y + 5}" '
+                        'text-anchor="end" '
                         f'fill="{"#be123c" if negative else "#334155"}" '
                         'font-size="14" font-weight="800" '
                         'font-family="SFMono-Regular, Consolas, Liberation Mono, '

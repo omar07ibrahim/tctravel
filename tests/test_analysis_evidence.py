@@ -381,6 +381,11 @@ class PublishedAnalysisEvidenceTests(unittest.TestCase):
                     )
 
         envelope = ET.fromstring((ROOT / evidence.ENVELOPE_OUTPUT).read_bytes())
+        self.assertGreaterEqual(
+            int(envelope.attrib["data-axis-end-x"])
+            - int(envelope.attrib["data-value-label-x"]),
+            32,
+        )
         for panel in envelope.iter():
             if "data-panel" not in panel.attrib:
                 continue
@@ -418,6 +423,11 @@ class PublishedAnalysisEvidenceTests(unittest.TestCase):
         slack = ET.fromstring((ROOT / evidence.SLACK_OUTPUT).read_bytes())
         self.assertLess(int(slack.attrib["data-scale-min"]), 0)
         self.assertGreater(int(slack.attrib["data-scale-max"]), 0)
+        self.assertGreaterEqual(
+            int(slack.attrib["data-value-label-x"])
+            - int(slack.attrib["data-axis-end-x"]),
+            250,
+        )
         slack_groups = [
             element for element in slack.iter() if "data-best-slack" in element.attrib
         ]
