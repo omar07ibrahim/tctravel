@@ -1,9 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "tctravel-temporal-compiler"
-version = "0.2.0"
-description = "Strict itinerary contracts and deterministic temporal dependency graphs"
+version = "0.3.0"
+description = "Deterministic temporal graphs and interval-feasibility analysis"
 requires-python = ">=3.11"
 dependencies = []
+
+[project.scripts]
+tctravel-analyze = "tctravel.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tctravel*"]
 
 [tool.pyright]
 pythonVersion = "3.11"
