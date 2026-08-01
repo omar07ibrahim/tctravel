@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "itinerary_id": "synthetic_tight_connection",
+  "anchor_time_utc": "2026-08-01T08:00:00Z",
+  "horizon_seconds": 7200,
+  "activities": [
+    {
+      "id": "local_shuttle",
+      "release_offset_seconds": 0,
+      "duration": {
+        "minimum_seconds": 600,
+        "maximum_seconds": 900
+      },
+      "hard_deadline_offset_seconds": 900
+    },
+    {
+      "id": "security_check",
+      "release_offset_seconds": 0,
+      "duration": {
+        "minimum_seconds": 300,
+        "maximum_seconds": 600
+      },
+      "hard_deadline_offset_seconds": 1500
+    },
+    {
+      "id": "gate_walk",
+      "release_offset_seconds": 0,
+      "duration": {
+        "minimum_seconds": 240,
+        "maximum_seconds": 360
+      },
+      "hard_deadline_offset_seconds": 2040
+    }
+  ],
+  "transfers": [
+    {
+      "from_activity_id": "local_shuttle",
+      "to_activity_id": "security_check",
+      "minimum_seconds": 120
+    },
+    {
+      "from_activity_id": "security_check",
+      "to_activity_id": "gate_walk",
+      "minimum_seconds": 60
+    }
+  ]
+}
