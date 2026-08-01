@@ -88,9 +88,12 @@ as validated contract inputs.
 The validator propagates only lower duration bounds and minimum transfer gaps.
 It rejects an activity when even this earliest possible completion misses its
 hard deadline. Passing that check does **not** mean every duration in the
-declared intervals will meet every deadline. Worst-case analysis, stochastic
-calibration, scenario simulation, route selection, and live travel data are
-outside contract v1.
+declared intervals will meet every deadline. The separate
+[interval-feasibility analysis v1](interval-feasibility-v1.md), available
+directly or through the [CLI](cli.md), evaluates that bounded question with
+all-minimum and all-maximum earliest-start passes. Stochastic calibration,
+scenario simulation, route selection, and live travel data remain outside
+contract v1 and the interval analyzer.
 
 ## Canonical bytes and digests
 
