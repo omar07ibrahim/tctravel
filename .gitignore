@@ -2,6 +2,7 @@
 .pytest_cache/
 .ruff_cache/
 .venv/
+.evidence-work/
 __pycache__/
 *.py[cod]
 *.egg-info/
