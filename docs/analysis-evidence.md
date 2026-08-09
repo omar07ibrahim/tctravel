@@ -116,7 +116,7 @@ Create a clean environment and run the read-only verifier:
 
 ```bash
 python3.12 -m venv .venv
-.venv/bin/python -m pip install --require-hashes -r requirements-evidence.txt
+.venv/bin/python -m pip install --require-hashes --no-deps -r requirements-evidence.txt
 .venv/bin/python tools/generate_analysis_evidence.py --check
 ```
 
