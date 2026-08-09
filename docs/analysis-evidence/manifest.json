@@ -365,18 +365,18 @@
   ],
   "pipeline": {
     "dependency_versions": {
-      "Pillow": "11.3.0",
+      "Pillow": "12.3.0",
       "pip": "26.2",
       "setuptools": "83.0.0",
       "wheel": "0.47.0"
     },
-    "revision": "c7f0b5c1318170b13d5ba74d7fadecf7078371a1",
+    "revision": "a8c36943eb7a5f4e5fda66539f5ff404cf4634e0",
     "sources": [
       {
-        "blob_oid": "6e9a8209992b990bec2c8048cf7ab6ff79d8ecf2",
+        "blob_oid": "1cc5e837ed1ec807d81959789a65ef58c9e1d7d8",
         "bytes": 628,
         "path": "requirements-evidence.txt",
-        "sha256": "147392930ecc8c52b1742af60fcf82d5338a95b6096820ba56bab554f2cc8b9b"
+        "sha256": "cea4f3fd964eeb47f862360d10e7442ec3705170b0fc840318ba389d4e685635"
       },
       {
         "blob_oid": "7844aad557476906295c65003754138447294d74",
@@ -385,10 +385,10 @@
         "sha256": "6e875b96434e268d9867b326b1464fb9ae1f55ec304bb41eb5bff269e8a6e745"
       },
       {
-        "blob_oid": "e46fde3efe2cb2cb7338c10c67d03654cccbb704",
+        "blob_oid": "b375a4e25796948c0d6b196d7c85c2fcad0f42be",
         "bytes": 108825,
         "path": "tools/generate_analysis_evidence.py",
-        "sha256": "c149ababdaa31c36c706adc8795921d33951d479c343587176de89edf93569a7"
+        "sha256": "4719b78b70ba0e4d972595cb664a10ec241f3ca40eb239928d35b830cc46ae90"
       }
     ]
   },
@@ -626,11 +626,11 @@
     }
   },
   "renderer_contract": {
-    "locked_pillow_wheel_sha256": "676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024",
-    "pillow_distribution_file_count": 138,
-    "pillow_distribution_tree_sha256": "29b0317118fa9818057672db906c77925017ee8ae4a3a5f0ffd015a0fd59eca0",
+    "locked_pillow_wheel_sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91",
+    "pillow_distribution_file_count": 142,
+    "pillow_distribution_tree_sha256": "74e7be577256b575983c8379b3ca639773daa168f0e207868c30964ea56b00ef",
     "pillow_module_within_distribution": true,
-    "pillow_version": "11.3.0",
+    "pillow_version": "12.3.0",
     "pillow_zlib_version": "1.3",
     "platform_machine": "x86_64",
     "platform_system": "Linux",
