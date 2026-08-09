@@ -1,0 +1,6 @@
+{
+  "include": ["tctravel"],
+  "pythonVersion": "3.11",
+  "reportUnusedImport": "warning",
+  "typeCheckingMode": "strict"
+}
