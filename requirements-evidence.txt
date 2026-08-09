@@ -1,8 +1,8 @@
 # Exact wheels used to build the committed feasibility evidence bundle.
 # The Pillow hash selects the CPython 3.12 Linux x86_64 manylinux wheel; the
 # generator independently rejects any renderer platform or installed tree drift.
-Pillow==11.3.0 \
-    --hash=sha256:676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024
+Pillow==12.3.0 \
+    --hash=sha256:78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91
 pip==26.2 \
     --hash=sha256:931c303696af6fa3417112103b1cad26890e5a07eccb5b99783700e33f2b8aad
 setuptools==83.0.0 \

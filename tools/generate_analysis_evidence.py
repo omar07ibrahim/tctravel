@@ -90,15 +90,15 @@ MANIFEST_OUTPUT: Final = f"{EVIDENCE_ROOT}/manifest.json"
 CHECK_COMMAND: Final = ".venv/bin/python tools/generate_analysis_evidence.py --check"
 WRITE_COMMAND: Final = ".venv/bin/python tools/generate_analysis_evidence.py --write"
 EXPECTED_PIPELINE_DISTRIBUTIONS: Final = {
-    "Pillow": "11.3.0",
+    "Pillow": "12.3.0",
     "pip": "26.2",
     "setuptools": "83.0.0",
     "wheel": "0.47.0",
 }
 EXPECTED_PILLOW_WHEEL_SHA256: Final = (
-    "676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024"
+    "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91"
 )
-EXPECTED_PILLOW_DIST_INFO_ROOT: Final = "pillow-11.3.0.dist-info"
+EXPECTED_PILLOW_DIST_INFO_ROOT: Final = "pillow-12.3.0.dist-info"
 EXPECTED_PILLOW_NATIVE_ROOT: Final = "pillow.libs"
 EXPECTED_RENDERER_CONTRACT: Final = {
     "platform_machine": "x86_64",
@@ -109,7 +109,7 @@ EXPECTED_RENDERER_CONTRACT: Final = {
         "29b0317118fa9818057672db906c77925017ee8ae4a3a5f0ffd015a0fd59eca0"
     ),
     "pillow_module_within_distribution": True,
-    "pillow_version": "11.3.0",
+    "pillow_version": "12.3.0",
     "locked_pillow_wheel_sha256": EXPECTED_PILLOW_WHEEL_SHA256,
     "pillow_zlib_version": "1.3",
     "python_abi": "cpython-312-x86_64-linux-gnu",
@@ -1166,7 +1166,7 @@ def _pillow_distribution_tree() -> tuple[int, str, Path]:
 
     The tree is exactly every non-bytecode regular file listed by the installed
     distribution below ``PIL/``, ``pillow.libs/``, or
-    ``pillow-11.3.0.dist-info/``. Each row is UTF-8 relative path, NUL, decimal
+    ``pillow-12.3.0.dist-info/``. Each row is UTF-8 relative path, NUL, decimal
     byte length, NUL, lowercase SHA-256 hex, then LF. Installer-created caches
     are excluded so import history cannot alter the renderer identity.
     """
