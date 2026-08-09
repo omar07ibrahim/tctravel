@@ -1,5 +1,7 @@
 # TCTravel — Time-Critical Travel Compiler
 
+[![CI](https://github.com/omar07ibrahim/tctravel/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/omar07ibrahim/tctravel/actions/workflows/ci.yml)
+
 TCTravel is a deterministic reliability engine for plans in which one late
 step can invalidate everything downstream. It turns bounded activity
 durations, hard completion deadlines, and transfer dependencies into a
