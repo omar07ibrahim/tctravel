@@ -104,9 +104,9 @@ EXPECTED_RENDERER_CONTRACT: Final = {
     "platform_machine": "x86_64",
     "platform_system": "Linux",
     "platform_tag": "linux-x86_64",
-    "pillow_distribution_file_count": 138,
+    "pillow_distribution_file_count": 142,
     "pillow_distribution_tree_sha256": (
-        "29b0317118fa9818057672db906c77925017ee8ae4a3a5f0ffd015a0fd59eca0"
+        "74e7be577256b575983c8379b3ca639773daa168f0e207868c30964ea56b00ef"
     ),
     "pillow_module_within_distribution": True,
     "pillow_version": "12.3.0",

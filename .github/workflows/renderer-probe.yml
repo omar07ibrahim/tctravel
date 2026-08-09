@@ -1,84 +1,70 @@
-name: Renderer probe
+name: Evidence refresh
 
 on:
   push:
     branches: [security/pillow-12.3-evidence]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  probe:
-    name: Probe exact renderer
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    name: Regenerate patched evidence
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Check out full source history
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6.0.2
         with:
           fetch-depth: 0
-          persist-credentials: false
       - name: Set up exact evidence Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v6.2.0
         with:
           python-version: "3.12.3"
-      - name: Install the candidate evidence toolchain
+      - name: Install the patched evidence toolchain
         run: python -m pip install --require-hashes --no-deps -r requirements-evidence.txt
-      - name: Report candidate renderer and raster contracts
+      - name: Regenerate the source-bound evidence bundle
+        run: python tools/generate_analysis_evidence.py --write
+      - name: Verify the complete repository
+        run: |
+          python -m unittest discover -s tests -v
+          python tools/generate_analysis_evidence.py --check
+          python tools/generate_visuals.py --check
+          python tools/verify_legacy.py --check
+      - name: Restrict generated changes to analysis evidence
         run: |
           python - <<'PY'
-          import importlib.metadata
-          import json
-          import platform
-          import sysconfig
-          import zlib
-          from pathlib import Path
+          import subprocess
 
-          import PIL
-          from PIL import features
-          from tools import generate_analysis_evidence as evidence
-
-          def observed_renderer_contract():
-              count, tree_digest, site_root = evidence._pillow_distribution_tree()
-              module_file = PIL.__file__
-              python_abi = sysconfig.get_config_var("SOABI")
-              pillow_zlib = features.version("zlib")
-              if module_file is None or not isinstance(python_abi, str) or not isinstance(pillow_zlib, str):
-                  raise RuntimeError("renderer runtime detail missing")
-              return {
-                  "platform_machine": platform.machine(),
-                  "platform_system": platform.system(),
-                  "platform_tag": sysconfig.get_platform(),
-                  "pillow_distribution_file_count": count,
-                  "pillow_distribution_tree_sha256": tree_digest,
-                  "pillow_module_within_distribution": Path(module_file).resolve().is_relative_to(site_root),
-                  "pillow_version": PIL.__version__,
-                  "locked_pillow_wheel_sha256": evidence.EXPECTED_PILLOW_WHEEL_SHA256,
-                  "pillow_zlib_version": pillow_zlib,
-                  "python_abi": python_abi,
-                  "python_implementation": platform.python_implementation(),
-                  "python_version": platform.python_version(),
-                  "python_zlib_build_version": zlib.ZLIB_VERSION,
-                  "python_zlib_runtime_version": zlib.ZLIB_RUNTIME_VERSION,
-              }
-
-          evidence._renderer_contract = observed_renderer_contract
-          bundle = evidence.build_bundle(
-              evidence.REPOSITORY_ROOT,
-              evidence.DEFAULT_SUBJECT_REVISION,
-          )
-          manifest = json.loads(bundle[evidence.MANIFEST_OUTPUT])
-          result = {
-              "artifact_sha256": {
-                  artifact["path"]: artifact["sha256"]
-                  for artifact in manifest["artifacts"]
-              },
-              "raster_presentations": {
-                  artifact["path"]: artifact["presentation"]
-                  for artifact in manifest["artifacts"]
-                  if artifact["media_type"] in {"image/png", "image/gif"}
-              },
-              "renderer_contract": manifest["renderer_contract"],
-          }
-          print("RENDERER_PROBE=" + json.dumps(result, sort_keys=True))
+          payload = subprocess.check_output(
+              ["git", "status", "--porcelain=v1", "-z", "--untracked-files=all"]
+          ).decode("utf-8")
+          changed = []
+          rejected = []
+          for record in payload.split("\0"):
+              if not record:
+                  continue
+              if len(record) < 4:
+                  raise SystemExit("malformed git status record")
+              path = record[3:]
+              changed.append(path)
+              if not path.startswith("docs/analysis-evidence/"):
+                  rejected.append(path)
+          if not changed:
+              raise SystemExit("evidence refresh produced no changes")
+          if rejected:
+              raise SystemExit("unexpected generated paths: " + ", ".join(rejected))
+          print("Generated paths:")
+          print("\n".join(sorted(changed)))
           PY
+      - name: Commit the regenerated artifacts as Omar Ibrahim
+        env:
+          GIT_AUTHOR_NAME: Omar Ibrahim
+          GIT_AUTHOR_EMAIL: 31526072+omar07ibrahim@users.noreply.github.com
+          GIT_COMMITTER_NAME: Omar Ibrahim
+          GIT_COMMITTER_EMAIL: 31526072+omar07ibrahim@users.noreply.github.com
+        run: |
+          git add -- docs/analysis-evidence
+          git commit -m "Regenerate evidence with patched Pillow"
+          git push origin "HEAD:$GITHUB_REF_NAME"

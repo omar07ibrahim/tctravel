@@ -108,7 +108,7 @@ manifest:
 
 - CPython 3.12.3, CPython ABI `cpython-312-x86_64-linux-gnu`;
 - Linux x86_64;
-- Pillow 11.3.0 with the locked wheel and installed-tree identities;
+- Pillow 12.3.0 with the locked wheel and installed-tree identities;
 - Python and Pillow zlib 1.3; and
 - pinned `pip==26.2`, `setuptools==83.0.0`, and `wheel==0.47.0`.
 
