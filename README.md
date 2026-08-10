@@ -228,3 +228,20 @@ reports counts and digests without printing those values.
 
 See [`docs/legacy-provenance.md`](docs/legacy-provenance.md) and
 [`legacy.manifest.json`](legacy.manifest.json) for the exact boundary.
+## Maintenance, licensing, and release boundary
+
+The maintained package state is `0.3.0`. The original compiler, tests,
+documentation, and generated evidence are MIT-licensed; the exact scope is
+defined by [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
+
+The nine inherited website files remain a checksum-attested quarantine with
+unresolved authorship and redistribution rights. They are not covered by the
+MIT grant and are never used in package code, fixtures, screenshots, diagrams,
+or demos. A GitHub release archive is intentionally deferred until those files
+can either be removed from the release tree or cleared by the rights holder.
+
+Security reports belong in
+[GitHub private vulnerability reporting](https://github.com/omar07ibrahim/tctravel/security/advisories/new),
+not a public issue. Development and evidence rules are documented in
+[CONTRIBUTING.md](CONTRIBUTING.md), and source-state changes are recorded in
+[CHANGELOG.md](CHANGELOG.md).
